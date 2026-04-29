@@ -15,7 +15,7 @@ public class SceneLoader : MonoBehaviour
 
     public void GoToResults()
     {
-        SceneManager.LoadScene("Results"); // o "Results"
+        SceneManager.LoadScene("Victory"); 
     }
 
     public void ExitGame()
