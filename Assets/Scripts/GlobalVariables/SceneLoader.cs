@@ -15,12 +15,11 @@ public class SceneLoader : MonoBehaviour
 
     public void GoToResults()
     {
-        SceneManager.LoadScene("GameOver"); // o "Results"
+        SceneManager.LoadScene("Results"); // o "Results"
     }
 
     public void ExitGame()
     {
-        Application.Quit();
-        Debug.Log("Salir del juego");
+        SceneManager.LoadScene("Splash");
     }
 }
