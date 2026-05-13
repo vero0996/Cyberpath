@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Interest
+  - Defensa
+  - Jugador
   layers:
   - Default
   - TransparentFX
@@ -41,7 +44,10 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: map
+  - name: virus
+    uniqueID: 1328095047
+    locked: 0
+  - name: Player
     uniqueID: 1573604143
     locked: 0
   m_RenderingLayers:

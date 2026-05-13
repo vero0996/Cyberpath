@@ -3,22 +3,59 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     public int herida;
-    void OnTriggerEnter2D(Collider2D player)
+    public float Cooldown = 1f;
+
+    private float timerJugador;
+    private float timerDefensa;
+
+    void OnCollisionStay2D(Collision2D collision)
     {
-        if (player.tag == "Jugador" && player.GetComponent<Jugador>().life)
+        GameObject obj = collision.gameObject;
+
+        // DAÑO AL JUGADOR   
+        if (obj.CompareTag("Jugador"))
         {
-            player.GetComponent<Jugador>().Health -= herida;
-            
+            Jugador jugador = obj.GetComponent<Jugador>();
+
+            if (jugador != null && jugador.life)
+            {
+                timerJugador += Time.deltaTime;
+
+                if (timerJugador >= Cooldown)
+                {
+                    jugador.Health -= herida;
+                    timerJugador = 0f;
+                }
+            }
+        }
+
+        // DAÑO A DEFENSAS
+        if (obj.CompareTag("Interest"))
+        {
+            BuildingHealth building = obj.GetComponent<BuildingHealth>();
+
+            if (building != null)
+            {
+                // si es el primer contacto, golpea instantáneo
+                if (timerDefensa == 0f)
+                {
+                    building.TakeDamage(herida);
+                }
+
+                timerDefensa += Time.deltaTime;
+
+                if (timerDefensa >= Cooldown)
+                {
+                    building.TakeDamage(herida);
+                    timerDefensa = 0f;
+                }
+            }
         }
     }
 
-    void OnCollisionStay2D(Collision2D player)
+    void OnCollisionExit2D(Collision2D collision)
     {
-        if (player.gameObject.tag == "Jugador" &&
-            player.gameObject.GetComponent<Jugador>().life)
-        {
-            player.gameObject.GetComponent<Jugador>().Health -= herida;
-           
-        }
+        timerJugador = 0f;
+        timerDefensa = 0f;
     }
 }
