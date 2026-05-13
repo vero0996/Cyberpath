@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6425086009655201280}
   - component: {fileID: 383983826766723426}
   - component: {fileID: 189579530567377509}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Virus 2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -167,19 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95e090516089b14b8964a07356d8471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  speed: 3
-  detectionRange: 0
+  waypoints: []
+  speed: 1.5
+  damageToPlayer: 50
+  detectionRange: 1
 --- !u!114 &189579530567377509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,4 +184,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   herida: 30
-  Cooldown: 5
+  Cooldown: 3

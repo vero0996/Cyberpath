@@ -5,7 +5,7 @@ public class Damage : MonoBehaviour
     public int herida;
     public float Cooldown = 1f;
 
-    private float timerJugador;
+ 
     private float timerDefensa;
 
     void OnCollisionStay2D(Collision2D collision)
@@ -19,13 +19,13 @@ public class Damage : MonoBehaviour
 
             if (jugador != null && jugador.life)
             {
-                timerJugador += Time.deltaTime;
 
-                if (timerJugador >= Cooldown)
-                {
-                    jugador.Health -= herida;
-                    timerJugador = 0f;
-                }
+                    EnemyAI2D stats = GetComponent<EnemyAI2D>();
+
+                    int damage = (stats != null) ? stats.damageToPlayer : 10;
+
+                    jugador.Health -= damage;
+
             }
         }
 
@@ -54,8 +54,7 @@ public class Damage : MonoBehaviour
     }
 
     void OnCollisionExit2D(Collision2D collision)
-    {
-        timerJugador = 0f;
+    { 
         timerDefensa = 0f;
     }
 }

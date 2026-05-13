@@ -7,6 +7,8 @@ TagManager:
   - Interest
   - Defensa
   - Jugador
+  - Undefined
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - Water
   - UI
   - mapa
-  - 
-  - 
+  - Enemigos
+  - Defensas
   - 
   - 
   - 
@@ -49,6 +51,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1573604143
+    locked: 0
+  - name: camara
+    uniqueID: 1710291865
     locked: 0
   m_RenderingLayers:
   - Default

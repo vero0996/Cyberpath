@@ -6,6 +6,7 @@ public class EnemyAI2D : MonoBehaviour
     private Rigidbody2D rb;
     public float speed = 3f;
     private int currentWaypoint = 0;
+    public int damageToPlayer ;
     public float detectionRange = 4f; // Distancia para detectar objetos
     private Transform target; // Objeto de interés
 
@@ -84,6 +85,7 @@ public class EnemyAI2D : MonoBehaviour
         waypoints = newWaypoints;
         currentWaypoint = 0;
     }
+
 
     void FindClosestWaypoint()
     {

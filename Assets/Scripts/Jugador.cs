@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Jugador : MonoBehaviour
 {
@@ -13,11 +14,13 @@ public class Jugador : MonoBehaviour
     public bool life = true;
 
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         Health = maxHealth;
+        BarraE.maxValue = maxHealth;
     }
 
     // Update is called once per frame
@@ -34,18 +37,18 @@ public class Jugador : MonoBehaviour
             // Movimiento isométrico
             movement = new Vector2(horizontal, vertical).normalized;
             // Animaciones
-            if (animator != null)
+           /* if (animator != null)
             {
                 animator.SetFloat("MoveX", movement.x);
                 animator.SetFloat("MoveY", movement.y);
                 animator.SetFloat("Speed", movement.sqrMagnitude);
-            }
+            }*/
             if (Health <= 0 && life)
             {
                 Health = 0;
                 life = false;
-                animator.Play("PlayerDead");
-
+                //animator.Play("PlayerDead");
+                Invoke("FinJuego", 4);
             }
         }
     }
@@ -55,5 +58,8 @@ public class Jugador : MonoBehaviour
         rb.MovePosition(rb.position + movement * velocidad * Time.fixedDeltaTime);
     }
 
-
+    void FinJuego()
+    {
+        SceneManager.LoadScene(4);
+    }
 }
