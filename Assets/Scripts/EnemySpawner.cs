@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
     public Wave[] waves;
     private int currentWave = 0;
 
+
     void Start()
     {
         StartCoroutine(SpawnWaves());
@@ -16,7 +17,8 @@ public class EnemySpawner : MonoBehaviour
     {
         while (currentWave < waves.Length)
         { Wave wave = waves[currentWave];
-
+            //Delay para iniciar la oleada
+            yield return new WaitForSeconds(wave.startDelay);
             //grupos de enemigos
             foreach (Enemy group in wave.enemies)
             {
@@ -65,6 +67,6 @@ public class Wave
 {
     public Enemy[] enemies;
     public float timeBetweenWaves;
-
+    public float startDelay;
 }
 
