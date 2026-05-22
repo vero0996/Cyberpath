@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1dd26522631bf7041ab0113471fb70e4
+guid: 8675be4db49451c478ffe8b2fb8b1fa8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8373946822039649566
-    second: defensa_0
+      213: -1264872954541260422
+    second: "Dise\xF1o sin t\xEDtulo (3)_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: defensa_0
+      name: "Dise\xF1o sin t\xEDtulo (3)_0"
       rect:
         serializedVersion: 2
-        x: 759
-        y: 370
-        width: 402
-        height: 340
-      alignment: 9
-      pivot: {x: 0.5031034, y: 0.3789287}
+        x: 735
+        y: 316
+        width: 447
+        height: 444
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e2c0508bb3c9cb80800000000000000
-      internalID: -8373946822039649566
+      spriteID: a71c19adfb4427ee0800000000000000
+      internalID: -1264872954541260422
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a4fce817b18a24041942f838a7211f32
+    spriteID: 409892499f16c9049aeddfd5ef13b344
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      defensa_0: -8373946822039649566
+      "Dise\xF1o sin t\xEDtulo (3)_0": -1264872954541260422
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

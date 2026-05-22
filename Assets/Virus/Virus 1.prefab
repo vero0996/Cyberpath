@@ -139,7 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95e090516089b14b8964a07356d8471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
   speed: 2
   damageToPlayer: 80
   detectionRange: 1
