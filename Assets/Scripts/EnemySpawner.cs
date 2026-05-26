@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 
 public class EnemySpawner : MonoBehaviour
@@ -6,7 +7,14 @@ public class EnemySpawner : MonoBehaviour
     public Path path;
     public Wave[] waves;
     private int currentWave = 0;
+    public static UnityEvent onEnemyDestroy = new UnityEvent();
+    private int enemiesAlive;
+    
 
+    public void Awake()
+    {
+        onEnemyDestroy.AddListener(EnemyDestroyed);
+    }
 
     void Start()
     {
@@ -25,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
                 for (int i = 0; i < group.amount; i++)
                 {
                     SpawnEnemy(group.enemyPrefab);
-
+                    enemiesAlive++;
                     float currentRate = group.spawnRate;
 
                     if (i > group.amount / 2)
@@ -53,6 +61,12 @@ public class EnemySpawner : MonoBehaviour
         enemy.GetComponent<EnemyAI2D>()
             .SetPath(path.waypoints);
     }
+
+    private void EnemyDestroyed()
+    {
+        enemiesAlive--;
+    }
+
 }
 
 [System.Serializable]

@@ -15,7 +15,7 @@ public class BaseZone : MonoBehaviour
             {
                 jugador.Health -= enemy.damageToPlayer;
             }
-
+            EnemySpawner.onEnemyDestroy.Invoke();
             Destroy(other.gameObject);
         }
     }

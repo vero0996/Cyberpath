@@ -1119,11 +1119,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5623271775270934482, guid: c31dd537c7300074da57469d19e6b1f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.99
+      value: -1.59
       objectReference: {fileID: 0}
     - target: {fileID: 5623271775270934482, guid: c31dd537c7300074da57469d19e6b1f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5623271775270934482, guid: c31dd537c7300074da57469d19e6b1f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1828,6 +1828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f22316d0d756634d842d549ec42fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneda: 0
 --- !u!4 &1284695391
 Transform:
   m_ObjectHideFlags: 0
@@ -2641,12 +2642,9 @@ MonoBehaviour:
   - enemies:
     - enemyPrefab: {fileID: 2571730012667918543, guid: 25054af18712e4045b0adf0f9ca54bd0, type: 3}
       amount: 20
-      spawnRate: 5
-    - enemyPrefab: {fileID: 5217435081810752047, guid: 24ef4dba0dff8ee48afba0b974d05969, type: 3}
-      amount: 20
-      spawnRate: 5
+      spawnRate: 4
     timeBetweenWaves: 200
-    startDelay: 2
+    startDelay: 0
 --- !u!1 &1941349859
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    public int herida;
-    public float Cooldown = 1f;
-
+    [Header("Atributos")]
+    [SerializeField] private int Daño;
+    [SerializeField] private float Cooldown = 1f;
+    
  
     private float timerDefensa;
 
@@ -39,14 +40,14 @@ public class Damage : MonoBehaviour
                 // si es el primer contacto, golpea instantáneo
                 if (timerDefensa == 0f)
                 {
-                    building.TakeDamage(herida);
+                    building.TakeDamage(Daño);
                 }
 
                 timerDefensa += Time.deltaTime;
 
                 if (timerDefensa >= Cooldown)
                 {
-                    building.TakeDamage(herida);
+                    building.TakeDamage(Daño);
                     timerDefensa = 0f;
                 }
             }
@@ -56,5 +57,23 @@ public class Damage : MonoBehaviour
     void OnCollisionExit2D(Collision2D collision)
     { 
         timerDefensa = 0f;
+    }
+    // Daño a enemigos
+    [Header("Vida")]
+    [SerializeField] private int hitPoints;
+    [SerializeField] public int valorMoneda;
+
+    private bool isDead = false;
+    public void RecibeDaño(int dmg)
+    {
+        hitPoints -= dmg;
+
+        if( hitPoints <= 0 && !isDead)
+        {
+            EnemySpawner.onEnemyDestroy.Invoke();
+            LevelManager.main.AddMoneda(valorMoneda);
+            isDead = true;
+            Destroy(gameObject);
+        }
     }
 }
