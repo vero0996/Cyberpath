@@ -24,7 +24,7 @@ public class Bala : MonoBehaviour
         }
 
         Vector2 direction = (target.position - transform.position).normalized;
-        rb.velocity = direction * velocidad;
+        rb.linearVelocity = direction * velocidad;
        
     }
 
@@ -35,7 +35,7 @@ public class Bala : MonoBehaviour
         // Llamar al componente Damage del enemigo si existe
         if (other.TryGetComponent<Damage>(out var damageComp))
         {
-            damageComp.RecibeDaño(dmg);
+            damageComp.RecibeDaÃ±o(dmg);
             Destroy(gameObject);
             return;
         }
