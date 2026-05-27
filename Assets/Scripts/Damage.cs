@@ -3,7 +3,7 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     [Header("Atributos")]
-    [SerializeField] private int Daño;
+    [SerializeField] private int DaÃ±o;
     [SerializeField] private float Cooldown = 1f;
     
  
@@ -13,7 +13,7 @@ public class Damage : MonoBehaviour
     {
         GameObject obj = collision.gameObject;
 
-        // DAÑO AL JUGADOR   
+        // DAÃ‘O AL JUGADOR   
         if (obj.CompareTag("Jugador"))
         {
             Jugador jugador = obj.GetComponent<Jugador>();
@@ -30,24 +30,24 @@ public class Damage : MonoBehaviour
             }
         }
 
-        // DAÑO A DEFENSAS
+        // DAï¿½O A DEFENSAS
         if (obj.CompareTag("Interest"))
         {
             BuildingHealth building = obj.GetComponent<BuildingHealth>();
 
             if (building != null)
             {
-                // si es el primer contacto, golpea instantáneo
+                // si es el primer contacto, golpea instantï¿½neo
                 if (timerDefensa == 0f)
                 {
-                    building.TakeDamage(Daño);
+                    building.TakeDamage(DaÃ±o);
                 }
 
                 timerDefensa += Time.deltaTime;
 
                 if (timerDefensa >= Cooldown)
                 {
-                    building.TakeDamage(Daño);
+                    building.TakeDamage(DaÃ±o);
                     timerDefensa = 0f;
                 }
             }
@@ -58,13 +58,13 @@ public class Damage : MonoBehaviour
     { 
         timerDefensa = 0f;
     }
-    // Daño a enemigos
+    // Daï¿½o a enemigos
     [Header("Vida")]
     [SerializeField] private int hitPoints;
     [SerializeField] public int valorMoneda;
 
     private bool isDead = false;
-    public void RecibeDaño(int dmg)
+    public void RecibeDaÃ±o(int dmg)
     {
         hitPoints -= dmg;
 
