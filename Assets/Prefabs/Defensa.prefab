@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2768436991776104254}
   - component: {fileID: 5659341733004739944}
-  - component: {fileID: 2840106300507376157}
   - component: {fileID: 6965203958906673312}
+  - component: {fileID: 2840106300507376157}
   - component: {fileID: 2681325001790018488}
   m_Layer: 8
   m_Name: Defensa
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -8373946822039649566, guid: 1dd26522631bf7041ab0113471fb70e4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.690566, g: 0.68857324, b: 0.6397507, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -91,6 +91,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6965203958906673312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2840532180297969078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 384f8f66db53c1142a0c7bbfec764358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balaPrefab: {fileID: 544948828501811924, guid: a421f5bd4d5b33b449a783c519a65bb4, type: 3}
+  firePoint: {fileID: 270861814845205363}
+  mascaraEnemigo:
+    serializedVersion: 2
+    m_Bits: 128
+  maxHealth: 1000
+  currentHealth: 0
+  rangoAtaque: 2
+  fireRate: 1
 --- !u!61 &2840106300507376157
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -137,27 +158,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.582111, y: 2.2690115}
   m_EdgeRadius: 0
---- !u!114 &6965203958906673312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2840532180297969078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 384f8f66db53c1142a0c7bbfec764358, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  balaPrefab: {fileID: 544948828501811924, guid: a421f5bd4d5b33b449a783c519a65bb4, type: 3}
-  firePoint: {fileID: 270861814845205363}
-  mascaraEnemigo:
-    serializedVersion: 2
-    m_Bits: 128
-  maxHealth: 1000
-  currentHealth: 0
-  rangoAtaque: 2
-  fireRate: 1
 --- !u!61 &2681325001790018488
 BoxCollider2D:
   m_ObjectHideFlags: 0

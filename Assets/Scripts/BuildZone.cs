@@ -25,8 +25,15 @@ public class BuildZone : MonoBehaviour
             {
                 if (defensa != null) return;
                
-                GameObject defensatemp = BuildManager.main.GetSelectedDefensa();
-                defensa = Instantiate(defensatemp, transform.position, Quaternion.identity);
+                Torres defensatemp = BuildManager.main.GetSelectedDefensa();
+                if (defensatemp.precio > LevelManager.main.moneda)
+                {
+                    Debug.Log("No tienes suficiente dinero");
+                    return;
+                }
+                LevelManager.main.GastarMoneda(defensatemp.precio);
+
+                defensa = Instantiate(defensatemp.prefab, transform.position, Quaternion.identity);
                 Debug.Log("Interactuó" + nameof(BuildZone));
             }
         }

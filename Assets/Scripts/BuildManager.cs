@@ -6,8 +6,8 @@ public class BuildManager : MonoBehaviour
     public static BuildManager main;
 
     [Header("References")]
-    [SerializeField] private GameObject[] DefensaPrefabs;
-    
+    [SerializeField] private Torres[] torre; 
+
     private int defensaSelected = 0;
 
 
@@ -16,8 +16,13 @@ public class BuildManager : MonoBehaviour
         main = this;
     }
 
-    public GameObject GetSelectedDefensa()
+    public Torres GetSelectedDefensa()
     {
-        return DefensaPrefabs[defensaSelected];
+        return torre[defensaSelected];
+    }
+
+    public void SetSelectedDefensa(int indexTorre)
+    {
+        defensaSelected = indexTorre;
     }
 }
