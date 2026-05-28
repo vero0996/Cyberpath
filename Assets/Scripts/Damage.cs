@@ -30,7 +30,7 @@ public class Damage : MonoBehaviour
             }
         }
 
-        // DA�O A DEFENSAS
+        // DAÑO A DEFENSAS
         if (obj.CompareTag("Interest"))
         {
             BuildingHealth building = obj.GetComponent<BuildingHealth>();
@@ -58,10 +58,11 @@ public class Damage : MonoBehaviour
     { 
         timerDefensa = 0f;
     }
-    // Da�o a enemigos
+    // Daño a enemigos
     [Header("Vida")]
     [SerializeField] private int hitPoints;
     [SerializeField] public int valorMoneda;
+    [SerializeField] public int valorPuntos;
 
     private bool isDead = false;
     public void RecibeDaño(int dmg)
@@ -72,6 +73,7 @@ public class Damage : MonoBehaviour
         {
             EnemySpawner.onEnemyDestroy.Invoke();
             LevelManager.main.AddMoneda(valorMoneda);
+            LevelManager.main.AddPuntos(valorPuntos);
             isDead = true;
             Destroy(gameObject);
         }
