@@ -19,7 +19,7 @@ En sus atributos se puede asignar su velocidad, vida maxima, y se puede observar
 
 ## Spawner
 El spawner es la manera en la que aparecen los enemigos y se asignan las waves. Actualemente funciona de la siguiente manera:
-- Se le debe asignar el codigo Path para poder asignarle el camino de Waypoints a los enemigos.
+- Se le debe asignar el objeto Path para poder asignarle el camino de Waypoints a los enemigos.
 - Se asigna el numero de waves que se quiera
 - Se puede asignar el numero de enemigos unicos que pueden aparecer por wave
 - Por enemigo se puede definir la cantidad de enemigos de ese tipo que van a aparecer y la frecuencia con la que aparecen.
@@ -59,5 +59,14 @@ Esta es quien ataca a los enemigos cuando una defensa los detecta. La bala sigue
 
 Se le debe asignar en atributos: su propio RigidBody, la velocidad a la que va y cuanto daño le hace a los enemigos.
 
+## Menu
+Esta esta como hijo de canvas. Tiene el codigo Tienda y es donde se crea la interfas de la tienda como objetos hijos de menu.
+El codigo Tienda funciona de la siguiente manera:
+- Tienda llama al level Manger para obtener las monedas actuales del jugador y asi el objeto hijo de este muestre cuantas monedas tiene el jugador.
+- Tambien llama al BuildManager para saber el arreglo de las defensas y asi determinar cual defensa es que el jugador quiere construir.
+- Solamente sele debe asignar el objeto textmesh que muestra las monedas actuales del jugador.
+
+Menu tiene como hijos los objetos que forman la interfaz de la tienda, destacando el objeto llamado tienda que tiene como objetos hijos a los botones que definen que tipo de defensa quiere construir el jugador, teniendo que asignarle que por click llame a la funcion de Builmanager SetSelectedDefensa, asignandole el objeto levelmanger y escribiendo el numero al que pertenece la defensa en el arreglo de defensas para asi el boton saber que defensa es que el jugador quiere comprar.
+EL arreglo de las defensas inicia en 0, por lo que la primera defensa asignada al levelmanger en el boton se le asigna como 0.
 
 
