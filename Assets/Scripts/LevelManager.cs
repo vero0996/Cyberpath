@@ -10,8 +10,9 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
     public static LevelManager main;
-
+    [Header("Datos jugador")]
     public int moneda;
+    public int puntos;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         moneda = 100;
+        puntos = 00000;
     }
     public void AddMoneda(int amount)
     {
@@ -44,5 +46,10 @@ public class LevelManager : MonoBehaviour
         else { Debug.Log("No tienes suficientes monedas");
             return false;
         }
+    }
+
+    public void AddPuntos(int amount)
+    {
+        puntos += amount;
     }
 }

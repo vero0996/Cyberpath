@@ -16,7 +16,7 @@ public class BuildingHealth : MonoBehaviour
     [SerializeField] private float fireRate=1f;//balas por segundo
 
     private Transform target;
-    private float fireCountdown;
+    private float fireCountdown = Mathf.Infinity;
 
     void Start()
     {
@@ -36,7 +36,9 @@ public class BuildingHealth : MonoBehaviour
             target = null;
         }
         else
-        {
+        { 
+           
+            
             fireCountdown += Time.deltaTime;
             if(fireCountdown >= 1f/ fireRate)
             {
