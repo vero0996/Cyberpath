@@ -4031,7 +4031,7 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 2571730012667918543, guid: 25054af18712e4045b0adf0f9ca54bd0, type: 3}
       amount: 20
       spawnRate: 4
-    timeBetweenWaves: 200
+    timeBetweenWaves: 185.2
     startDelay: 0
 --- !u!1 &1913330852
 GameObject:
