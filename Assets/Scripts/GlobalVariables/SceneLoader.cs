@@ -22,4 +22,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Splash");
     }
+
+    public void GoToCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 }
