@@ -33,7 +33,7 @@ public class Damage : MonoBehaviour
         // DAÑO A DEFENSAS
         if (obj.CompareTag("Interest"))
         {
-            BuildingHealth building = obj.GetComponent<BuildingHealth>();
+            Defensas building = obj.GetComponent<Defensas>();
 
             if (building != null)
             {
