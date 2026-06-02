@@ -16,11 +16,20 @@ public class BuildManager : MonoBehaviour
         main = this;
     }
 
+    // Se ejecuta en el editor cuando cambias algo en el inspector
+    private void OnValidate()
+    {
+        EnsureFirstIsNull();
+    }
+
+    private void EnsureFirstIsNull()
+    {
+        if (torre == null || torre.Length == 0) return;
+        torre[0] = null;
+    }
+
     public Torres GetSelectedDefensa()
     {
-        torre[0].nombre = null;
-        torre[0].precio = 0;
-        torre[0].prefab = null;
         if (defensaSelected == 0)
         {
             Debug.Log("No se ha seleccionado ninguna defensa");

@@ -24,8 +24,12 @@ public class BuildZone : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E)) //Construir defensa
             {
                 if (defensa != null) return;
-               
+                
                 Torres defensatemp = BuildManager.main.GetSelectedDefensa();
+                if ( defensatemp == null)
+                {
+                    return;
+                }
                 if (defensatemp.precio > LevelManager.main.moneda)
                 {
                     Debug.Log("No tienes suficiente dinero");
