@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
-  speed: 1.5
+  speed: 2.3
   damageToPlayer: 200
   detectionRange: 0
 --- !u!114 &189579530567377509

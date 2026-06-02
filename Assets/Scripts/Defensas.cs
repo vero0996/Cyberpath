@@ -73,10 +73,25 @@ public class Defensas : MonoBehaviour
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, rangoAtaque,(Vector2) 
             transform.position, 0f, mascaraEnemigo);
 
-        if (hits.Length > 0)
+
+        float distanciaMinima = Mathf.Infinity;
+        Transform enemigoMasCercano = null;
+
+        foreach (RaycastHit2D hit in hits)
         {
-            target = hits[0].transform;
+            float distancia = Vector2.Distance(
+                transform.position,
+                hit.transform.position
+            );
+
+            if (distancia < distanciaMinima)
+            {
+                distanciaMinima = distancia;
+                enemigoMasCercano = hit.transform;
+            }
         }
+
+        target = enemigoMasCercano;
     }
     private bool CheckTargetEnRango()
     {

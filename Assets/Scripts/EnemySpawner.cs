@@ -8,8 +8,11 @@ public class EnemySpawner : MonoBehaviour
     public Wave[] waves;
     private int currentWave = 0;
     public static UnityEvent onEnemyDestroy = new UnityEvent();
-    private int enemiesAlive;
-    
+    private static int enemiesAlive;
+    [SerializeField]
+    private int debugEnemiesAlive;
+
+
 
     public void Awake()
     {
@@ -20,32 +23,82 @@ public class EnemySpawner : MonoBehaviour
     {
         StartCoroutine(SpawnWaves());
     }
-    
-    IEnumerator SpawnWaves() 
+
+    IEnumerator SpawnWaves()
     {
         while (currentWave < waves.Length)
-        { Wave wave = waves[currentWave];
-            //Delay para iniciar la oleada
+        {
+            Wave wave = waves[currentWave];
+
             yield return new WaitForSeconds(wave.startDelay);
-            //grupos de enemigos
-            foreach (Enemy group in wave.enemies)
+
+            
+            int[] remaining = new int[wave.enemies.Length];
+
+            for (int i = 0; i < wave.enemies.Length; i++)
             {
-                for (int i = 0; i < group.amount; i++)
-                {
-                    SpawnEnemy(group.enemyPrefab);
-                    enemiesAlive++;
-                    float currentRate = group.spawnRate;
-
-                    if (i > group.amount / 2)
-                    {
-                        currentRate *= 0.6f;
-                    }
-                    yield return new WaitForSeconds(currentRate);
-                }
+                remaining[i] = wave.enemies[i].amount;
             }
-            yield return new WaitForSeconds(wave.timeBetweenWaves);
-            currentWave++;  
 
+            int totalEnemies = 0;
+
+            foreach (Enemy enemy in wave.enemies)
+            {
+                totalEnemies += enemy.amount;
+            }
+
+            int spawnedEnemies = 0;
+            int initialEnemyCount = totalEnemies;
+            // Mientras queden enemigos por generar
+            while (totalEnemies > 0)
+            {
+               
+                System.Collections.Generic.List<int> availableTypes =
+                    new System.Collections.Generic.List<int>();
+
+               
+                for (int i = 0; i < wave.enemies.Length; i++)
+                {
+                    // Generar una lista de tipos disponibles
+                    bool EnemigosDisponibles = remaining[i] > 0;
+                    bool Desbloqueo = spawnedEnemies >= wave.enemies[i].unlockAfter;
+
+                    if (EnemigosDisponibles && Desbloqueo)
+                    {
+                        availableTypes.Add(i);
+                    }
+                }
+
+                if (availableTypes.Count == 0)
+                {
+                    yield return null;
+                    continue;
+                }
+
+                // Elegir uno aleatoriamente
+                int randomIndex = availableTypes[ Random.Range(0, availableTypes.Count)];
+
+                Enemy selectedEnemy = wave.enemies[randomIndex];
+
+                SpawnEnemy(selectedEnemy.enemyPrefab);
+                enemiesAlive++;
+
+                remaining[randomIndex]--;
+                totalEnemies--;
+                spawnedEnemies++;
+                float currentRate = selectedEnemy.spawnRate;
+
+                if (totalEnemies <= initialEnemyCount / 2)
+                {
+                    currentRate *= 0.5f;
+                }
+
+                yield return new WaitForSeconds(currentRate);
+            }
+
+            yield return new WaitForSeconds(wave.timeBetweenWaves);
+
+            currentWave++;
         }
     }
 
@@ -75,6 +128,9 @@ public class  Enemy
     public GameObject enemyPrefab;
     public int amount;
     public float spawnRate;
+
+    [Header("Desbloqueo")]
+    public int unlockAfter;
 }
 [System.Serializable]
 public class Wave

@@ -9,7 +9,7 @@ public class BuildManager : MonoBehaviour
     [SerializeField] private Torres[] torre;
 
     private int defensaSelected = 0;
-
+    
 
     private void Awake()
     {
@@ -18,12 +18,21 @@ public class BuildManager : MonoBehaviour
 
     public Torres GetSelectedDefensa()
     {
+        torre[0].nombre = null;
+        torre[0].precio = 0;
+        torre[0].prefab = null;
+        if (defensaSelected == 0)
+        {
+            Debug.Log("No se ha seleccionado ninguna defensa");
+            
+            return null;
+        }
         return torre[defensaSelected];
     }
 
     public void SetSelectedDefensa(int indexTorre)
     {
-        defensaSelected = indexTorre;
+        defensaSelected = indexTorre ;
     }
 
     public int GetPrice(GameObject instance)
