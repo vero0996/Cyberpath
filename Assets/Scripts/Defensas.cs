@@ -17,6 +17,10 @@ public class Defensas : MonoBehaviour
     [SerializeField] private float fireRate=1f;//balas por segundo
     [SerializeField] private float velocidadGiro;
 
+    [Header("Desgaste")]
+    [SerializeField] private int danoPorSegundo = 1;
+    private float timerDesgaste;
+
     private Transform target;
     private float fireCountdown = Mathf.Infinity;
 
@@ -27,6 +31,13 @@ public class Defensas : MonoBehaviour
 
     void Update()
     {
+        timerDesgaste += Time.deltaTime;
+
+        if (timerDesgaste >= 1f)
+        {
+            TakeDamage(danoPorSegundo);
+            timerDesgaste = 0f;
+        }
         if (target == null)
         {
             EncuentraObjetivo();
