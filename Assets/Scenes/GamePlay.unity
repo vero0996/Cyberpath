@@ -1791,7 +1791,7 @@ MonoBehaviour:
     Move around the map.\r\nLeft Click - Select towers from the defenses menu.\r\nE
     - Place the selected tower at your current position."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8fb3238c4b6494d42981268862334acc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 70d5778d527a4154ca22e8db80c8f442, type: 2}
   m_sharedMaterial: {fileID: -669190938503770691, guid: 8fb3238c4b6494d42981268862334acc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1858,7 +1858,7 @@ MonoBehaviour:
   m_margin: {x: -740.3073, y: 149.78613, z: 352.65353, w: 128.668}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &741208937
@@ -3136,7 +3136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torre:
-  - nombre: NULL
+  - nombre: 
     precio: 0
     prefab: {fileID: 0}
   - nombre: Defensa basica
@@ -3976,7 +3976,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: CONTINUE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2710f1228a0e04d71b98546f853248a3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e99d014f29cf94641a4646e8f4116e49, type: 2}
   m_sharedMaterial: {fileID: 5840553513126906654, guid: 2710f1228a0e04d71b98546f853248a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4043,7 +4043,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1565906666
@@ -4281,7 +4281,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: WELCOME TO CYBERPATH
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2710f1228a0e04d71b98546f853248a3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e99d014f29cf94641a4646e8f4116e49, type: 2}
   m_sharedMaterial: {fileID: 5840553513126906654, guid: 2710f1228a0e04d71b98546f853248a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4348,7 +4348,7 @@ MonoBehaviour:
   m_margin: {x: -846.3684, y: 0, z: -859.14575, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1695626865
