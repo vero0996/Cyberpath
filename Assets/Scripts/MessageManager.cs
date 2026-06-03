@@ -57,11 +57,11 @@ public class MessageManager : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(duration);
 
+        messageCoroutine = null;
         if (id != messageId)
-            messageCoroutine = null;
         yield break;
 
-        messageCoroutine = null;
+       
         ClearMessage();
     }
 

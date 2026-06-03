@@ -36,19 +36,13 @@ public class Jugador : MonoBehaviour
 
             // Movimiento isom�trico
             movement = new Vector2(horizontal, vertical).normalized;
-            // Animaciones
-           /* if (animator != null)
-            {
-                animator.SetFloat("MoveX", movement.x);
-                animator.SetFloat("MoveY", movement.y);
-                animator.SetFloat("Speed", movement.sqrMagnitude);
-            }*/
+            
             if (Health <= 0 && life)
             {
                 Health = 0;
                 life = false;
-                //animator.Play("PlayerDead");
                 Invoke("FinJuego", 3);
+                
             }
         }
     }

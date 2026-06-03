@@ -31,7 +31,7 @@ public class Damage : MonoBehaviour
         }
 
         // DAÑO A DEFENSAS
-        if (obj.CompareTag("Interest"))
+        if (obj.CompareTag("Defensa"))
         {
             Defensas building = obj.GetComponent<Defensas>();
 

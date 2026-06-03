@@ -3893,7 +3893,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 1288388424}
-  waves: []
+  waves:
+  - enemies:
+    - enemyPrefab: {fileID: 2571730012667918543, guid: 25054af18712e4045b0adf0f9ca54bd0, type: 3}
+      amount: 20
+      spawnRate: 1.4
+      unlockAfter: 0
+    - enemyPrefab: {fileID: 5217435081810752047, guid: 24ef4dba0dff8ee48afba0b974d05969, type: 3}
+      amount: 15
+      spawnRate: 1.8
+      unlockAfter: 7
+    timeBetweenWaves: 15
+    startDelay: 3
+  - enemies:
+    - enemyPrefab: {fileID: 2571730012667918543, guid: 25054af18712e4045b0adf0f9ca54bd0, type: 3}
+      amount: 35
+      spawnRate: 1.3
+      unlockAfter: 0
+    - enemyPrefab: {fileID: 5217435081810752047, guid: 24ef4dba0dff8ee48afba0b974d05969, type: 3}
+      amount: 20
+      spawnRate: 1.6
+      unlockAfter: 5
+    timeBetweenWaves: 15
+    startDelay: 3
+  - enemies:
+    - enemyPrefab: {fileID: 5217435081810752047, guid: 24ef4dba0dff8ee48afba0b974d05969, type: 3}
+      amount: 20
+      spawnRate: 1.4
+      unlockAfter: 0
+    - enemyPrefab: {fileID: 46045497644343628, guid: 42f1b8bfd47620145a57a10c1ee39093, type: 3}
+      amount: 15
+      spawnRate: 1.4
+      unlockAfter: 5
+    timeBetweenWaves: 15
+    startDelay: 3
   debugEnemiesAlive: 0
   waveMessage: {fileID: 1992948199}
   waveMessageDuration: 5
@@ -4542,7 +4575,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.81886786, g: 0.08497676, b: 0.08497676, a: 1}
     m_PressedColor: {r: 0.7132075, g: 0.057863947, b: 0.057863947, a: 1}
     m_SelectedColor: {r: 0.6679245, g: 0.06931285, b: 0.06931285, a: 1}
-    m_DisabledColor: {r: 0.93207544, g: 0.08969026, b: 0.08969026, a: 0.79607844}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.79607844}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -6623,11 +6656,37 @@ MonoBehaviour:
   waves:
   - enemies:
     - enemyPrefab: {fileID: 2571730012667918543, guid: 25054af18712e4045b0adf0f9ca54bd0, type: 3}
-      amount: 30
-      spawnRate: 0.3
+      amount: 20
+      spawnRate: 1.4
       unlockAfter: 0
+    - enemyPrefab: {fileID: 5217435081810752047, guid: 24ef4dba0dff8ee48afba0b974d05969, type: 3}
+      amount: 20
+      spawnRate: 1.8
+      unlockAfter: 7
     timeBetweenWaves: 15
-    startDelay: 4
+    startDelay: 3
+  - enemies:
+    - enemyPrefab: {fileID: 2571730012667918543, guid: 25054af18712e4045b0adf0f9ca54bd0, type: 3}
+      amount: 25
+      spawnRate: 1.3
+      unlockAfter: 0
+    - enemyPrefab: {fileID: 5217435081810752047, guid: 24ef4dba0dff8ee48afba0b974d05969, type: 3}
+      amount: 20
+      spawnRate: 1.6
+      unlockAfter: 5
+    timeBetweenWaves: 15
+    startDelay: 3
+  - enemies:
+    - enemyPrefab: {fileID: 5217435081810752047, guid: 24ef4dba0dff8ee48afba0b974d05969, type: 3}
+      amount: 24
+      spawnRate: 1.4
+      unlockAfter: 0
+    - enemyPrefab: {fileID: 46045497644343628, guid: 42f1b8bfd47620145a57a10c1ee39093, type: 3}
+      amount: 15
+      spawnRate: 1.6
+      unlockAfter: 4
+    timeBetweenWaves: 15
+    startDelay: 3
   debugEnemiesAlive: 0
   waveMessage: {fileID: 1992948199}
   waveMessageDuration: 5

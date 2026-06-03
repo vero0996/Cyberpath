@@ -74,7 +74,7 @@ public class EnemyAI2D : MonoBehaviour
 
         foreach (Collider2D hit in hits)
         {
-            if (hit.CompareTag("Interest"))
+            if (hit.CompareTag("Defensa"))
             {
                 target = hit.transform;
                 break;
