@@ -23,18 +23,21 @@ public class Timer : MonoBehaviour
     }
 
     private void Update()
+{
+    tiempoTranscurrido += Time.deltaTime;
+
+    Debug.Log(
+        $"Tiempo={tiempoTranscurrido} | TimeScale={Time.timeScale}"
+    );
+
+    int minutos = Mathf.FloorToInt(tiempoTranscurrido / 60);
+    int segundos = Mathf.FloorToInt(tiempoTranscurrido % 60);
+
+    if (timerText != null)
     {
-        tiempoTranscurrido += Time.deltaTime;
-
-        int minutos = Mathf.FloorToInt(tiempoTranscurrido / 60);
-        int segundos = Mathf.FloorToInt(tiempoTranscurrido % 60);
-
-        // Solo actualizar si existe un Text asignado
-        if (timerText != null)
-        {
-            timerText.text = string.Format("{0:00}:{1:00}", minutos, segundos);
-        }
+        timerText.text = string.Format("{0:00}:{1:00}", minutos, segundos);
     }
+}
 
     public float GetTiempo()
     {
