@@ -1,26 +1,23 @@
 using UnityEngine;
-using UnityEngine.Events;
 using System.Collections;
+using TMPro;
 
 public class EnemySpawner : MonoBehaviour
 {
     public Path path;
     public Wave[] waves;
     private int currentWave = 0;
-    public static UnityEvent onEnemyDestroy = new UnityEvent();
-    private static int enemiesAlive;
+
     [SerializeField]
     private int debugEnemiesAlive;
 
-
-
-    public void Awake()
-    {
-        onEnemyDestroy.AddListener(EnemyDestroyed);
-    }
+    [Header("UI")]
+    public TextMeshProUGUI waveMessage;
+    public float waveMessageDuration = 3f;
 
     void Start()
     {
+        ContadorEnem.RecalculateFromScene();
         StartCoroutine(SpawnWaves());
     }
 
@@ -32,7 +29,12 @@ public class EnemySpawner : MonoBehaviour
 
             yield return new WaitForSeconds(wave.startDelay);
 
-            
+            if (waveMessage != null)
+            {
+                StartCoroutine(ShowWaveStart(currentWave + 1, waveMessageDuration));
+                yield return new WaitForSeconds(waveMessageDuration);
+            }
+
             int[] remaining = new int[wave.enemies.Length];
 
             for (int i = 0; i < wave.enemies.Length; i++)
@@ -49,21 +51,18 @@ public class EnemySpawner : MonoBehaviour
 
             int spawnedEnemies = 0;
             int initialEnemyCount = totalEnemies;
-            // Mientras queden enemigos por generar
+
             while (totalEnemies > 0)
             {
-               
                 System.Collections.Generic.List<int> availableTypes =
                     new System.Collections.Generic.List<int>();
 
-               
                 for (int i = 0; i < wave.enemies.Length; i++)
                 {
-                    // Generar una lista de tipos disponibles
-                    bool EnemigosDisponibles = remaining[i] > 0;
-                    bool Desbloqueo = spawnedEnemies >= wave.enemies[i].unlockAfter;
+                    bool enemigosDisponibles = remaining[i] > 0;
+                    bool desbloqueo = spawnedEnemies >= wave.enemies[i].unlockAfter;
 
-                    if (EnemigosDisponibles && Desbloqueo)
+                    if (enemigosDisponibles && desbloqueo)
                     {
                         availableTypes.Add(i);
                     }
@@ -75,17 +74,17 @@ public class EnemySpawner : MonoBehaviour
                     continue;
                 }
 
-                // Elegir uno aleatoriamente
-                int randomIndex = availableTypes[ Random.Range(0, availableTypes.Count)];
+                int randomIndex =
+                    availableTypes[Random.Range(0, availableTypes.Count)];
 
                 Enemy selectedEnemy = wave.enemies[randomIndex];
 
                 SpawnEnemy(selectedEnemy.enemyPrefab);
-                enemiesAlive++;
 
                 remaining[randomIndex]--;
                 totalEnemies--;
                 spawnedEnemies++;
+
                 float currentRate = selectedEnemy.spawnRate;
 
                 if (totalEnemies <= initialEnemyCount / 2)
@@ -93,7 +92,25 @@ public class EnemySpawner : MonoBehaviour
                     currentRate *= 0.5f;
                 }
 
+                if (totalEnemies == 0)
+                {
+                    currentRate /= 0.5f;
+                }
+
                 yield return new WaitForSeconds(currentRate);
+            }
+
+            ContadorEnem.RecalculateFromScene();
+            debugEnemiesAlive = ContadorEnem.Alive;
+
+            while (ContadorEnem.Alive > 0)
+            {
+                yield return null;
+            }
+
+            if (waveMessage != null)
+            {
+                StartCoroutine(ShowWaveComplete(currentWave + 1, waveMessageDuration));
             }
 
             yield return new WaitForSeconds(wave.timeBetweenWaves);
@@ -102,28 +119,48 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-
     void SpawnEnemy(GameObject enemyPrefab)
     {
         GameObject enemy = Instantiate(
-           enemyPrefab,
-           transform.position,
-           Quaternion.identity
-       );
+            enemyPrefab,
+            transform.position,
+            Quaternion.identity
+        );
 
         enemy.GetComponent<EnemyAI2D>()
             .SetPath(path.waypoints);
+
+        ContadorEnem.Increment();
+        debugEnemiesAlive = ContadorEnem.Alive;
     }
 
-    private void EnemyDestroyed()
+    private IEnumerator ShowWaveStart(int waveNumber, float duration)
     {
-        enemiesAlive--;
+        if (waveMessage == null) yield break;
+
+        waveMessage.gameObject.SetActive(true);
+        waveMessage.text = $"Inicio ronda {waveNumber}";
+
+        yield return new WaitForSeconds(duration);
+
+        waveMessage.gameObject.SetActive(false);
     }
 
+    private IEnumerator ShowWaveComplete(int waveNumber, float duration)
+    {
+        if (waveMessage == null) yield break;
+
+        waveMessage.gameObject.SetActive(true);
+        waveMessage.text = $"Ronda {waveNumber} completada";
+
+        yield return new WaitForSeconds(duration);
+
+        waveMessage.gameObject.SetActive(false);
+    }
 }
 
 [System.Serializable]
-public class  Enemy
+public class Enemy
 {
     public GameObject enemyPrefab;
     public int amount;
@@ -132,6 +169,7 @@ public class  Enemy
     [Header("Desbloqueo")]
     public int unlockAfter;
 }
+
 [System.Serializable]
 public class Wave
 {
@@ -139,4 +177,3 @@ public class Wave
     public float timeBetweenWaves;
     public float startDelay;
 }
-

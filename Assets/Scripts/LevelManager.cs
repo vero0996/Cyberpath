@@ -3,61 +3,71 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    
-    public void Menu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
-    }
     public static LevelManager main;
+
     [Header("Datos jugador")]
     public int moneda => PlayerData.MonedaActual;
     public int puntos => PlayerData.Puntos;
 
     private void Awake()
     {
-        // Inicializa singleton
         if (main == null)
         {
             main = this;
-            DontDestroyOnLoad(gameObject); 
+            DontDestroyOnLoad(gameObject);
         }
-        else if (main != this)
+        else
         {
             Destroy(gameObject);
+            return;
         }
     }
+
     private void Start()
     {
         PlayerData.ResetMatch();
     }
+
+    public void Menu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void AddMoneda(int amount)
     {
         PlayerData.AddMoneda(amount);
     }
+
     public bool GastarMoneda(int amount)
     {
-        if (PlayerData.GastarMoneda(amount))
+        if (!PlayerData.GastarMoneda(amount))
         {
-            return true;
+            Debug.Log("No tienes suficientes monedas");
+
+            if (MessageManager.main != null)
+                MessageManager.main.ShowMessage("Not enough money!");
+
+            return false;
         }
 
-        Debug.Log("No tienes suficientes monedas");
-        return false;
+        return true;
     }
 
     public void AddPuntos(int amount)
     {
         PlayerData.AddPuntos(amount);
     }
-    public void GetVida (Jugador jugador)
+
+    public void GetVida(Jugador jugador)
     {
-        if (!PlayerData.GastarMoneda(1000))
-        {
-            Debug.Log("NO tienes suficientes monedas");
+        // 🔥 IMPORTANTE: usa TU función ya validada
+        if (!GastarMoneda(1000))
             return;
-            
-        }
+
         jugador.Health += 300;
+
+        if (MessageManager.main != null)
+            MessageManager.main.ShowMessage("Health purchased!");
     }
 }

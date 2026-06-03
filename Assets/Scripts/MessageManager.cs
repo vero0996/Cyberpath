@@ -7,55 +7,32 @@ public class MessageManager : MonoBehaviour
     public static MessageManager main;
 
     [Header("UI")]
-    [SerializeField] private GameObject messagePanel;
     [SerializeField] private TextMeshProUGUI messageText;
 
     private Coroutine messageCoroutine;
-    private bool showingPersistentMessage;
+    private int messageId = 0;
 
     private void Awake()
     {
-        main = this;
-
-        if (messagePanel != null)
+        if (main != null && main != this)
         {
-            messagePanel.SetActive(false);
+            Destroy(gameObject);
+            return;
         }
+
+        main = this;
     }
 
     public void ShowMessage(string message, float duration = 2f)
     {
-        if (messagePanel == null || messageText == null) return;
-        showingPersistentMessage = false;
-
-        if (messageCoroutine != null)
+        if (messageText == null)
         {
-            StopCoroutine(messageCoroutine);
+            Debug.LogError("MessageText no asignado");
+            return;
         }
 
-        messageCoroutine = StartCoroutine(ShowMessageRoutine(message, duration));
-    }
-
-    private IEnumerator ShowMessageRoutine(string message, float duration)
-    {
-        messageText.text = message;
-        messagePanel.SetActive(true);
-
-        yield return new WaitForSeconds(duration);
-
-        if (!showingPersistentMessage)
-        {
-            HideMessage();
-        }
-
-        messageCoroutine = null;
-    }
-
-    public void ShowPersistentMessage(string message)
-    {
-        if (messagePanel == null || messageText == null) return;
-
-        showingPersistentMessage = true;
+        messageId++;
+        int currentId = messageId;
 
         if (messageCoroutine != null)
         {
@@ -63,16 +40,49 @@ public class MessageManager : MonoBehaviour
             messageCoroutine = null;
         }
 
+        messageCoroutine = StartCoroutine(ShowRoutine(message, duration, currentId));
+    }
+
+    private IEnumerator ShowRoutine(string message, float duration, int id)
+    {
+        messageText.gameObject.SetActive(true); // solo texto activo
         messageText.text = message;
-        messagePanel.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(duration);
+
+        messageCoroutine = null;
+
+        if (id != messageId)
+            yield break;
+
+        ClearMessage();
+    }
+
+    public void ShowPersistentMessage(string message)
+    {
+        messageId++;
+
+        if (messageCoroutine != null)
+        {
+            StopCoroutine(messageCoroutine);
+            messageCoroutine = null;
+        }
+
+        messageText.gameObject.SetActive(true);
+        messageText.text = message;
     }
 
     public void HideMessage()
     {
-        if (messagePanel == null || messageText == null) return;
+        ClearMessage();
+    }
 
-        showingPersistentMessage = false;
-        messageText.text = "";
-        messagePanel.SetActive(false);
+    private void ClearMessage()
+    {
+        if (messageText != null)
+        {
+            messageText.text = "";
+            messageText.gameObject.SetActive(false);
+        }
     }
 }
