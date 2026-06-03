@@ -10,8 +10,8 @@ public class Tienda : MonoBehaviour
 
     private void OnGUI()
     {
-        monedaUI.text = LevelManager.main.moneda.ToString();
-        puntosUI.text = LevelManager.main.puntos.ToString("D7");
+        monedaUI.text = PlayerData.MonedaActual.ToString();
+        puntosUI.text = PlayerData.Puntos.ToString("D7");
     }
 
     public void SetSeleccion()

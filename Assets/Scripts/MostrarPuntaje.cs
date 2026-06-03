@@ -13,13 +13,6 @@ public class MostrarPuntaje : MonoBehaviour
             return;
         }
 
-        if (LevelManager.main == null)
-        {
-            // This happens when starting directly from GameOver in the editor.
-            textoPuntaje.text = "0";
-            return;
-        }
-
-        textoPuntaje.text = LevelManager.main.puntos.ToString();
+        textoPuntaje.text = PlayerData.Puntos.ToString();
     }
 }

@@ -6,7 +6,14 @@ public class SceneLoader : MonoBehaviour
     public void GoToGameplay()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Gameplay");
+        PlayerData.ResetMatch();
+
+        if (Timer.main != null)
+        {
+            Timer.main.ReiniciarTimer();
+        }
+
+        SceneManager.LoadScene("GamePlay");
     }
 
     public void GoToMenu()

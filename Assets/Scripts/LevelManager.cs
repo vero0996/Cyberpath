@@ -7,14 +7,12 @@ public class LevelManager : MonoBehaviour
     public void Menu()
     {
         Time.timeScale = 1f;
-        moneda = 100;
-        puntos = 00000;
         SceneManager.LoadScene("MainMenu");
     }
     public static LevelManager main;
     [Header("Datos jugador")]
-    public int moneda;
-    public int puntos;
+    public int moneda => PlayerData.MonedaActual;
+    public int puntos => PlayerData.Puntos;
 
     private void Awake()
     {
@@ -27,56 +25,39 @@ public class LevelManager : MonoBehaviour
         else if (main != this)
         {
             Destroy(gameObject);
-            return;
         }
     }
     private void Start()
     {
-        moneda = 100;
-        puntos = 00000;
-
+        PlayerData.ResetMatch();
     }
     public void AddMoneda(int amount)
     {
-        moneda += amount;
+        PlayerData.AddMoneda(amount);
     }
     public bool GastarMoneda(int amount)
     {
-        if (amount <= moneda)
+        if (PlayerData.GastarMoneda(amount))
         {
-            moneda -= amount;
             return true;
         }
-        else 
-        { 
-            Debug.Log("No tienes suficientes monedas");
-            if (MessageManager.main != null)
-            {
-                MessageManager.main.ShowMessage("Not enough money!");
-            }
 
-            return false;
-        }
+        Debug.Log("No tienes suficientes monedas");
+        return false;
     }
 
     public void AddPuntos(int amount)
     {
-        puntos += amount;
+        PlayerData.AddPuntos(amount);
     }
     public void GetVida (Jugador jugador)
     {
-        if (moneda <= 999)
+        if (!PlayerData.GastarMoneda(1000))
         {
             Debug.Log("NO tienes suficientes monedas");
-            if (MessageManager.main != null)
-            {
-                MessageManager.main.ShowMessage("Not enough money!");
-            }
-
             return;
             
         }
         jugador.Health += 300;
-        GastarMoneda(1000);
     }
 }

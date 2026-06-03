@@ -25,6 +25,7 @@ public class Timer : MonoBehaviour
     private void Update()
 {
     tiempoTranscurrido += Time.deltaTime;
+    PlayerData.SetTiempoJugado(tiempoTranscurrido);
 
     Debug.Log(
         $"Tiempo={tiempoTranscurrido} | TimeScale={Time.timeScale}"
@@ -55,6 +56,7 @@ public class Timer : MonoBehaviour
     public void ReiniciarTimer()
     {
         tiempoTranscurrido = 0f;
+        PlayerData.SetTiempoJugado(0f);
     }
 
     public void SetTimerText(TextMeshProUGUI nuevoTexto)
