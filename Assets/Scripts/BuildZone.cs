@@ -28,17 +28,29 @@ public class BuildZone : MonoBehaviour
                 Torres defensatemp = BuildManager.main.GetSelectedDefensa();
                 if ( defensatemp == null)
                 {
+                    if (MessageManager.main != null)
+                    {
+                        MessageManager.main.ShowMessage("No defense selected!");
+                    }
                     return;
                 }
                 if (defensatemp.precio > LevelManager.main.moneda)
                 {
+                    if (MessageManager.main != null)
+                    {
+                        MessageManager.main.ShowMessage("Not enough money!");
+                    }
                     Debug.Log("No tienes suficiente dinero");
                     return;
                 }
                 LevelManager.main.GastarMoneda(defensatemp.precio);
 
                 defensa = Instantiate(defensatemp.prefab, transform.position, Quaternion.identity);
-                Debug.Log("Interactuó" + nameof(BuildZone));
+                Debug.Log("Interactuï¿½" + nameof(BuildZone));
+                if (MessageManager.main != null)
+                {
+                    MessageManager.main.ShowMessage("Defense placed!");
+                }
                 defensaConstruida += 1;
 
             }
@@ -47,11 +59,20 @@ public class BuildZone : MonoBehaviour
                 if (defensa == null)
                 {
                     Debug.Log("No hay defensa para vender");
+                    if (MessageManager.main != null)
+                    {
+                        MessageManager.main.ShowMessage("There is no defense to sell!");
+                    }
+
                     return;
                 }
                 if (defensa != null && defensaConstruida < 2 && LevelManager.main.moneda < 70)
                 {
                    Debug.Log("Unica defensa en el campo, no se puede vender");
+                    if (MessageManager.main != null)
+                    {
+                        MessageManager.main.ShowMessage("Cannot sell the only defense!");
+                    }
                     return;
                 }
 
@@ -61,7 +82,11 @@ public class BuildZone : MonoBehaviour
                 Destroy(defensa);   
                 defensa = null;
                 defensaConstruida -= 1;
-                Debug.Log("Destruyó" + nameof(BuildZone));
+                Debug.Log("Destruyï¿½" + nameof(BuildZone));
+                if (MessageManager.main != null)
+                {
+                    MessageManager.main.ShowMessage("Defense sold!");
+                }
             }
         }
         else
@@ -75,6 +100,11 @@ public class BuildZone : MonoBehaviour
         if (other.CompareTag("Jugador"))
         {
             jugadorCerca = true;
+
+            if (MessageManager.main != null)
+            {
+                MessageManager.main.ShowMessage("Press E to place a defense, Q to sell it");
+            }
         }
     }
 
@@ -83,6 +113,11 @@ public class BuildZone : MonoBehaviour
         if (other.CompareTag("Jugador"))
         {
             jugadorCerca = false;
+
+            if (MessageManager.main != null)
+            {
+                MessageManager.main.HideMessage();
+            }
         }
     }
 }
