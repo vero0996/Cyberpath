@@ -34,7 +34,7 @@ public class Jugador : MonoBehaviour
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
 
-            // Movimiento isométrico
+            // Movimiento isomï¿½trico
             movement = new Vector2(horizontal, vertical).normalized;
             // Animaciones
            /* if (animator != null)
@@ -48,7 +48,7 @@ public class Jugador : MonoBehaviour
                 Health = 0;
                 life = false;
                 //animator.Play("PlayerDead");
-                Invoke("FinJuego", 4);
+                Invoke("FinJuego", 3);
             }
         }
     }
@@ -60,6 +60,6 @@ public class Jugador : MonoBehaviour
 
     void FinJuego()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(3);
     }
 }

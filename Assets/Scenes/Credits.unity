@@ -384,11 +384,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Ver\xF3nica Paola Zapata S\xE1nchez\nErick Manuel Ure\xF1a Matos\nCarlos
     Emiliano Nava Flores \nDiego Hanger Soto \nMarian Guadalupe Willis Lozano \nJos\xE9
-    Eduardo Ferrer Cruz\nJorge Luis Flores Marroqu\xEDn\nMarting Francisco Noriega
+    Eduardo Ferrer Cruz\nJorge Luis Flores Marroqu\xEDn\nMartin Francisco Noriega
     Moreno \n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8fb3238c4b6494d42981268862334acc, type: 2}
-  m_sharedMaterial: {fileID: -669190938503770691, guid: 8fb3238c4b6494d42981268862334acc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -584,8 +584,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: HOME
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2710f1228a0e04d71b98546f853248a3, type: 2}
-  m_sharedMaterial: {fileID: 5840553513126906654, guid: 2710f1228a0e04d71b98546f853248a3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
