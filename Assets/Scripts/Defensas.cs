@@ -17,6 +17,10 @@ public class Defensas : MonoBehaviour
     [SerializeField] private float fireRate=1f;//balas por segundo
     [SerializeField] private float velocidadGiro;
 
+    [Header("Desgaste")]
+    [SerializeField] private int danoPorSegundo = 1;
+    private float timerDesgaste;
+
     private Transform target;
     private float fireCountdown = Mathf.Infinity;
 
@@ -27,6 +31,13 @@ public class Defensas : MonoBehaviour
 
     void Update()
     {
+        timerDesgaste += Time.deltaTime;
+
+        if (timerDesgaste >= 1f)
+        {
+            TakeDamage(danoPorSegundo);
+            timerDesgaste = 0f;
+        }
         if (target == null)
         {
             EncuentraObjetivo();
@@ -62,10 +73,25 @@ public class Defensas : MonoBehaviour
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, rangoAtaque,(Vector2) 
             transform.position, 0f, mascaraEnemigo);
 
-        if (hits.Length > 0)
+
+        float distanciaMinima = Mathf.Infinity;
+        Transform enemigoMasCercano = null;
+
+        foreach (RaycastHit2D hit in hits)
         {
-            target = hits[0].transform;
+            float distancia = Vector2.Distance(
+                transform.position,
+                hit.transform.position
+            );
+
+            if (distancia < distanciaMinima)
+            {
+                distanciaMinima = distancia;
+                enemigoMasCercano = hit.transform;
+            }
         }
+
+        target = enemigoMasCercano;
     }
     private bool CheckTargetEnRango()
     {

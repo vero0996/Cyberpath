@@ -107,7 +107,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  speed: 2
+  speed: 2.5
   damageToPlayer: 80
   detectionRange: 0.7
 --- !u!114 &725196932831996377
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "Da\xF1o": 20
   Cooldown: 1
-  hitPoints: 24
+  hitPoints: 28
   valorMoneda: 20
   valorPuntos: 100
 --- !u!58 &626183290315272238

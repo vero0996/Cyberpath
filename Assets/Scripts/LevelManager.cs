@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
         if (main == null)
         {
             main = this;
-            DontDestroyOnLoad(gameObject); // opcional si quieres que persista entre escenas
+            DontDestroyOnLoad(gameObject); 
         }
         else if (main != this)
         {
@@ -51,5 +51,16 @@ public class LevelManager : MonoBehaviour
     public void AddPuntos(int amount)
     {
         puntos += amount;
+    }
+    public void GetVida (Jugador jugador)
+    {
+        if (moneda <= 999)
+        {
+            Debug.Log("NO tienes suficientes monedas");
+            return;
+            
+        }
+        jugador.Health += 300;
+        GastarMoneda(1000);
     }
 }
