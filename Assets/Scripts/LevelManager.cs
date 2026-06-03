@@ -47,7 +47,14 @@ public class LevelManager : MonoBehaviour
             moneda -= amount;
             return true;
         }
-        else { Debug.Log("No tienes suficientes monedas");
+        else 
+        { 
+            Debug.Log("No tienes suficientes monedas");
+            if (MessageManager.main != null)
+            {
+                MessageManager.main.ShowMessage("Not enough money!");
+            }
+
             return false;
         }
     }
@@ -61,6 +68,11 @@ public class LevelManager : MonoBehaviour
         if (moneda <= 999)
         {
             Debug.Log("NO tienes suficientes monedas");
+            if (MessageManager.main != null)
+            {
+                MessageManager.main.ShowMessage("Not enough money!");
+            }
+
             return;
             
         }
