@@ -46,7 +46,7 @@ public class LevelManager : MonoBehaviour
             Debug.Log("No tienes suficientes monedas");
 
             if (MessageManager.main != null)
-                MessageManager.main.ShowMessage("Not enough money!");
+                MessageManager.main.ShowMessage("No tienes suficientes monedas!");
 
             return false;
         }
@@ -61,13 +61,17 @@ public class LevelManager : MonoBehaviour
 
     public void GetVida(Jugador jugador)
     {
-        // 🔥 IMPORTANTE: usa TU función ya validada
-        if (!GastarMoneda(1000))
+        
+        if (moneda < 1000)
+        {
+            if (MessageManager.main != null)
+                MessageManager.main.ShowMessage("No tienes suficientes monedas!");
             return;
+        }
 
         jugador.Health += 300;
-
+        GastarMoneda(1000);
         if (MessageManager.main != null)
-            MessageManager.main.ShowMessage("Health purchased!");
+            MessageManager.main.ShowMessage("Curación +300!");
     }
 }

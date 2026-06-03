@@ -7,6 +7,7 @@ public class MessageManager : MonoBehaviour
     public static MessageManager main;
 
     [Header("UI")]
+    [SerializeField] private GameObject background;
     [SerializeField] private TextMeshProUGUI messageText;
 
     private Coroutine messageCoroutine;
@@ -45,16 +46,22 @@ public class MessageManager : MonoBehaviour
 
     private IEnumerator ShowRoutine(string message, float duration, int id)
     {
-        messageText.gameObject.SetActive(true); // solo texto activo
-        messageText.text = message;
+        if (background != null)
+            background.SetActive(true);
+
+        if (messageText != null)
+            messageText.gameObject.SetActive(true);
+
+        if (messageText != null)
+            messageText.text = message;
 
         yield return new WaitForSecondsRealtime(duration);
 
-        messageCoroutine = null;
-
         if (id != messageId)
-            yield break;
+            messageCoroutine = null;
+        yield break;
 
+        messageCoroutine = null;
         ClearMessage();
     }
 
@@ -67,11 +74,15 @@ public class MessageManager : MonoBehaviour
             StopCoroutine(messageCoroutine);
             messageCoroutine = null;
         }
+        if (background != null)
+            background.SetActive(true);
 
-        messageText.gameObject.SetActive(true);
-        messageText.text = message;
+        if (messageText != null)
+        {
+            messageText.gameObject.SetActive(true);
+            messageText.text = message;
+        }
     }
-
     public void HideMessage()
     {
         ClearMessage();
@@ -83,6 +94,9 @@ public class MessageManager : MonoBehaviour
         {
             messageText.text = "";
             messageText.gameObject.SetActive(false);
+
+            if (background != null)
+                background.SetActive(false);
         }
     }
 }

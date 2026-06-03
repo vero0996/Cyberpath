@@ -7,6 +7,7 @@ public class BaseZone : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+           
             EnemyAI2D enemy = other.GetComponent<EnemyAI2D>();
 
             Jugador jugador = FindFirstObjectByType<Jugador>();

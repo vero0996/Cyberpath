@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -113,10 +114,17 @@ public class EnemySpawner : MonoBehaviour
                 StartCoroutine(ShowWaveComplete(currentWave + 1, waveMessageDuration));
             }
 
+            if( currentWave == waves.Length - 1)
+            {
+                StartCoroutine(ShowVictory(waveMessageDuration));
+                yield return new WaitForSeconds(waveMessageDuration);
+                SceneManager.LoadScene("VICTORY");
+            }
             yield return new WaitForSeconds(wave.timeBetweenWaves);
 
             currentWave++;
         }
+       
     }
 
     void SpawnEnemy(GameObject enemyPrefab)
@@ -139,7 +147,7 @@ public class EnemySpawner : MonoBehaviour
         if (waveMessage == null) yield break;
 
         waveMessage.gameObject.SetActive(true);
-        waveMessage.text = $"Inicio ronda {waveNumber}";
+        waveMessage.text = $"ROUND {waveNumber} START";
 
         yield return new WaitForSeconds(duration);
 
@@ -151,7 +159,18 @@ public class EnemySpawner : MonoBehaviour
         if (waveMessage == null) yield break;
 
         waveMessage.gameObject.SetActive(true);
-        waveMessage.text = $"Ronda {waveNumber} completada";
+        waveMessage.text = $"ROUND {waveNumber} COMPLETE";
+
+        yield return new WaitForSeconds(duration);
+
+        waveMessage.gameObject.SetActive(false);
+    }
+    private IEnumerator ShowVictory(float duration)
+    {
+        if (waveMessage == null) yield break;
+
+        waveMessage.gameObject.SetActive(true);
+        waveMessage.text = $"!!VICTORY!!";
 
         yield return new WaitForSeconds(duration);
 

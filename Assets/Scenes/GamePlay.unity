@@ -119,6 +119,57 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &27467882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 27467883}
+  - component: {fileID: 27467884}
+  m_Layer: 5
+  m_Name: message
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &27467883
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27467882}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 585941641}
+  m_Father: {fileID: 1491292304}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &27467884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27467882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81b78ac018c024458eaf24d70b655ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  background: {fileID: 585941640}
+  messageText: {fileID: 797059585}
 --- !u!1001 &130645420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1442,7 +1493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &585941641
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1450,19 +1501,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585941640}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.24249999, y: 0.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 797059587}
-  m_Father: {fileID: 1491292304}
+  m_Father: {fileID: 27467883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 337, y: -444.51}
-  m_SizeDelta: {x: 626.15, y: -745.03}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 55, y: -421}
+  m_SizeDelta: {x: 612.48, y: -33.03}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &585941642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1476,7 +1527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.97735846, g: 0.9570737, b: 0.9570737, a: 0.22745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2744,8 +2795,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190204
+  m_fontColor: {r: 0.4867924, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2762,13 +2813,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
+  m_fontSize: 40
   m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontSizeMin: 40
+  m_fontSizeMax: 60
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2801,7 +2852,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 7.1125793, w: 0}
+  m_margin: {x: -82.28067, y: 0, z: -82.027466, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2824,14 +2875,14 @@ RectTransform:
   m_GameObject: {fileID: 797059584}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 585941641}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -102.21, y: 0.0024109}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 550.11, y: 66.995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &806991941
@@ -2935,6 +2986,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4395063957489902672, guid: 40b14351774307840af8329b36fd9d14, type: 3}
   m_PrefabInstance: {fileID: 8922622088466621600}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &824978485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2038274743421723561, guid: 40b14351774307840af8329b36fd9d14, type: 3}
+  m_PrefabInstance: {fileID: 8922622088466621600}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824978480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8755460f0a4f7ca4388c8e9ba14397e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &831163541
 GameObject:
   m_ObjectHideFlags: 0
@@ -3831,20 +3893,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 1288388424}
-  waves:
-  - enemies:
-    - enemyPrefab: {fileID: 5217435081810752047, guid: 24ef4dba0dff8ee48afba0b974d05969, type: 3}
-      amount: 20
-      spawnRate: 2.2
-      unlockAfter: 0
-    - enemyPrefab: {fileID: 2571730012667918543, guid: 25054af18712e4045b0adf0f9ca54bd0, type: 3}
-      amount: 20
-      spawnRate: 1.8
-      unlockAfter: 0
-    timeBetweenWaves: 30
-    startDelay: 4
+  waves: []
   debugEnemiesAlive: 0
-  waveMessage: {fileID: 797059585}
+  waveMessage: {fileID: 1992948199}
   waveMessageDuration: 5
 --- !u!4 &966547842
 Transform:
@@ -4112,56 +4163,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1186267314
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1186267316}
-  - component: {fileID: 1186267315}
-  m_Layer: 0
-  m_Name: PlayerData
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1186267315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186267314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbbf13b68e41d4c51a85d996b953d8ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monedaActual: 100
-  puntos: 0
-  enemigosMatados: 0
-  tiempoJugado: 0
-  dineroGastado: 0
-  defensasUsadas: 0
---- !u!4 &1186267316
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186267314}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4921126, y: -0.24283928, z: 51.554756}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1203629432
 GameObject:
   m_ObjectHideFlags: 0
@@ -4335,6 +4336,7 @@ GameObject:
   - component: {fileID: 1284695391}
   - component: {fileID: 1284695390}
   - component: {fileID: 1284695392}
+  - component: {fileID: 1284695393}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -4391,6 +4393,24 @@ MonoBehaviour:
   - nombre: Defensa 2
     precio: 100
     prefab: {fileID: 3731978247623848866, guid: 615e0b5c21ba9554689f34fd586a7814, type: 3}
+--- !u!114 &1284695393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284695389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbbf13b68e41d4c51a85d996b953d8ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monedaActual: 100
+  puntos: 0
+  enemigosMatados: 0
+  tiempoJugado: 0
+  dineroGastado: 0
+  defensasUsadas: 0
 --- !u!1 &1288388423
 GameObject:
   m_ObjectHideFlags: 0
@@ -4942,10 +4962,10 @@ RectTransform:
   - {fileID: 1355294427}
   - {fileID: 1913330853}
   - {fileID: 323763287}
-  - {fileID: 585941641}
   - {fileID: 1992948201}
   - {fileID: 1704303625}
   - {fileID: 847346934}
+  - {fileID: 27467883}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4953,51 +4973,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1508937260
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1508937262}
-  - component: {fileID: 1508937261}
-  m_Layer: 0
-  m_Name: MessageManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1508937261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508937260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e81b78ac018c024458eaf24d70b655ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  messageText: {fileID: 797059585}
---- !u!4 &1508937262
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508937260}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5034124, y: 0.8780939, z: 307.6187}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1512388967
 GameObject:
   m_ObjectHideFlags: 0
@@ -5819,7 +5794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1704303623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6648,24 +6623,13 @@ MonoBehaviour:
   waves:
   - enemies:
     - enemyPrefab: {fileID: 2571730012667918543, guid: 25054af18712e4045b0adf0f9ca54bd0, type: 3}
-      amount: 20
-      spawnRate: 1.8
+      amount: 30
+      spawnRate: 0.3
       unlockAfter: 0
-    - enemyPrefab: {fileID: 2571730012667918543, guid: 25054af18712e4045b0adf0f9ca54bd0, type: 3}
-      amount: 20
-      spawnRate: 2.2
-      unlockAfter: 0
-    timeBetweenWaves: 30
+    timeBetweenWaves: 15
     startDelay: 4
-  - enemies:
-    - enemyPrefab: {fileID: 2571730012667918543, guid: 25054af18712e4045b0adf0f9ca54bd0, type: 3}
-      amount: 20
-      spawnRate: 1.8
-      unlockAfter: 0
-    timeBetweenWaves: 30
-    startDelay: 2
   debugEnemiesAlive: 0
-  waveMessage: {fileID: 797059585}
+  waveMessage: {fileID: 1992948199}
   waveMessageDuration: 5
 --- !u!1 &1913330852
 GameObject:
@@ -6930,7 +6894,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1971741735}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1284695390}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: GetVida
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 824978485}
+          m_ObjectArgumentAssemblyTypeName: Jugador, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1971741735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7016,8 +6992,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278250643
+  m_fontColor: {r: 0.57543904, g: 0.9245283, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7034,8 +7010,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7073,7 +7049,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -75.22797, y: 0, z: -42.315704, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7906,5 +7882,3 @@ SceneRoots:
   - {fileID: 1288388425}
   - {fileID: 1744579830}
   - {fileID: 793329446}
-  - {fileID: 1186267316}
-  - {fileID: 1508937262}
