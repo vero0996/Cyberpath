@@ -71,7 +71,7 @@ public class Damage : MonoBehaviour
 
         if( hitPoints <= 0 && !isDead)
         {
-            EnemySpawner.onEnemyDestroy.Invoke();
+            ContadorEnem.Decrement();
             LevelManager.main.AddMoneda(valorMoneda);
             LevelManager.main.AddPuntos(valorPuntos);
             isDead = true;

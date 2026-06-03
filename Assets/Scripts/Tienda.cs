@@ -7,6 +7,7 @@ public class Tienda : MonoBehaviour
     [SerializeField] private TextMeshProUGUI monedaUI;
     [SerializeField] private TextMeshProUGUI puntosUI;
 
+
     private void OnGUI()
     {
         monedaUI.text = LevelManager.main.moneda.ToString();

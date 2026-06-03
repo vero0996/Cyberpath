@@ -7,6 +7,8 @@ public class LevelManager : MonoBehaviour
     public void Menu()
     {
         Time.timeScale = 1f;
+        moneda = 100;
+        puntos = 00000;
         SceneManager.LoadScene("MainMenu");
     }
     public static LevelManager main;
@@ -25,12 +27,14 @@ public class LevelManager : MonoBehaviour
         else if (main != this)
         {
             Destroy(gameObject);
+            return;
         }
     }
     private void Start()
     {
         moneda = 100;
         puntos = 00000;
+
     }
     public void AddMoneda(int amount)
     {

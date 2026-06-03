@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 8675be4db49451c478ffe8b2fb8b1fa8
+guid: 0844b3cbf1b388242a14bb0879507be0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1264872954541260422
-    second: "Dise\xF1o sin t\xEDtulo (3)_0"
+      213: -7463743136211084624
+    second: "Dise\xF1o sin t\xEDtulo (8)_0"
+  - first:
+      213: 8365437323441872630
+    second: "Dise\xF1o sin t\xEDtulo (8)_1"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 350
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,23 +116,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Dise\xF1o sin t\xEDtulo (3)_0"
+      name: "Dise\xF1o sin t\xEDtulo (8)_1"
       rect:
         serializedVersion: 2
-        x: 735
-        y: 319
-        width: 442
-        height: 441
+        x: 775
+        y: 408
+        width: 355
+        height: 209
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a71c19adfb4427ee0800000000000000
-      internalID: -1264872954541260422
+      spriteID: 6fe1c867ce0081470800000000000000
+      internalID: 8365437323441872630
       vertices: []
       indices: 
       edges: []
@@ -138,7 +141,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 409892499f16c9049aeddfd5ef13b344
+    spriteID: da02624f1502a154fba12ae43b48a555
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +151,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Dise\xF1o sin t\xEDtulo (3)_0": -1264872954541260422
+      "Dise\xF1o sin t\xEDtulo (8)_0": -7463743136211084624
+      "Dise\xF1o sin t\xEDtulo (8)_1": 8365437323441872630
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

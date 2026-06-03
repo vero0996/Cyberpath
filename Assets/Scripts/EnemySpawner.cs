@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using TMPro;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -10,17 +11,16 @@ public class EnemySpawner : MonoBehaviour
     public static UnityEvent onEnemyDestroy = new UnityEvent();
     private static int enemiesAlive;
     [SerializeField]
-    private int debugEnemiesAlive;
+    public int debugEnemiesAlive;
 
-
-
-    public void Awake()
-    {
-        onEnemyDestroy.AddListener(EnemyDestroyed);
-    }
-
+    [Header("UI")]
+    public TextMeshProUGUI waveMessage; // asignar en Inspector
+    public float waveMessageDuration = 3f;
+     
+    
     void Start()
     {
+        ContadorEnem.RecalculateFromScene();
         StartCoroutine(SpawnWaves());
     }
 
@@ -32,7 +32,12 @@ public class EnemySpawner : MonoBehaviour
 
             yield return new WaitForSeconds(wave.startDelay);
 
-            
+            if (waveMessage != null)
+            {
+                StartCoroutine(ShowWaveStart(currentWave+1, waveMessageDuration));
+                yield return new WaitForSeconds(waveMessageDuration);
+            }
+
             int[] remaining = new int[wave.enemies.Length];
 
             for (int i = 0; i < wave.enemies.Length; i++)
@@ -49,6 +54,7 @@ public class EnemySpawner : MonoBehaviour
 
             int spawnedEnemies = 0;
             int initialEnemyCount = totalEnemies;
+            
             // Mientras queden enemigos por generar
             while (totalEnemies > 0)
             {
@@ -81,7 +87,6 @@ public class EnemySpawner : MonoBehaviour
                 Enemy selectedEnemy = wave.enemies[randomIndex];
 
                 SpawnEnemy(selectedEnemy.enemyPrefab);
-                enemiesAlive++;
 
                 remaining[randomIndex]--;
                 totalEnemies--;
@@ -92,8 +97,26 @@ public class EnemySpawner : MonoBehaviour
                 {
                     currentRate *= 0.5f;
                 }
+                if (totalEnemies == 0)
+                {
+                    currentRate /= 0.5f;
+                }
 
                 yield return new WaitForSeconds(currentRate);
+                
+            }
+            ContadorEnem.RecalculateFromScene();
+            debugEnemiesAlive = ContadorEnem.Alive;
+            while (ContadorEnem.Alive > 0)
+            {
+               
+                yield return null;
+            }
+
+            // Ronda completada: mostrar mensaje en pantalla
+            if (waveMessage != null)
+            {
+                StartCoroutine(ShowWaveComplete(currentWave + 1, waveMessageDuration));
             }
 
             yield return new WaitForSeconds(wave.timeBetweenWaves);
@@ -101,7 +124,25 @@ public class EnemySpawner : MonoBehaviour
             currentWave++;
         }
     }
+    private IEnumerator ShowWaveStart(int waveNumber, float duration)
+    {
+        if (waveMessage == null) yield break;
 
+        waveMessage.gameObject.SetActive(true);
+        waveMessage.text = $"Inicio ronda {waveNumber} ";
+        yield return new WaitForSeconds(duration);
+        waveMessage.gameObject.SetActive(false);
+    }
+
+    private IEnumerator ShowWaveComplete(int waveNumber, float duration)
+    {
+        if (waveMessage == null) yield break;
+
+        waveMessage.gameObject.SetActive(true);
+        waveMessage.text = $"Ronda {waveNumber} completada";
+        yield return new WaitForSeconds(duration);
+        waveMessage.gameObject.SetActive(false);
+    }
 
     void SpawnEnemy(GameObject enemyPrefab)
     {
@@ -113,13 +154,11 @@ public class EnemySpawner : MonoBehaviour
 
         enemy.GetComponent<EnemyAI2D>()
             .SetPath(path.waypoints);
+        ContadorEnem.Increment();
+        debugEnemiesAlive = ContadorEnem.Alive;
     }
 
-    private void EnemyDestroyed()
-    {
-        enemiesAlive--;
-    }
-
+   
 }
 
 [System.Serializable]

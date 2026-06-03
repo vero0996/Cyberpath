@@ -34,21 +34,15 @@ public class Jugador : MonoBehaviour
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
 
-            // Movimiento isom�trico
+            // Movimiento isometrico
             movement = new Vector2(horizontal, vertical).normalized;
-            // Animaciones
-           /* if (animator != null)
-            {
-                animator.SetFloat("MoveX", movement.x);
-                animator.SetFloat("MoveY", movement.y);
-                animator.SetFloat("Speed", movement.sqrMagnitude);
-            }*/
+            
             if (Health <= 0 && life)
             {
                 Health = 0;
                 life = false;
-                //animator.Play("PlayerDead");
-                Invoke("FinJuego", 3);
+                
+                Invoke("FinJuego", 4);
             }
         }
     }
@@ -60,6 +54,6 @@ public class Jugador : MonoBehaviour
 
     void FinJuego()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 }
