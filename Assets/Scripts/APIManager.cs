@@ -10,13 +10,12 @@ public class KPIData
     public int id_usuario;
     public int tiempo_jugado;
     public int amenazas_detectadas;
-    public int progreso;        // 🔧 cambiado a int
-    public int tasa_retencion;  // 🔧 cambiado a int
+    public int progreso;        
+    public int tasa_retencion; 
 }
 
 public class APIManager : MonoBehaviour
 {
-    // 🔧 IMPORTANTE: si es build o celular, NO uses localhost
     string apiUrl = "http://localhost:3000/kpi";
 
     void Awake()
@@ -24,18 +23,27 @@ public class APIManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // 🔥 ahora recibe datos reales del juego
     public void SendKPI(int tiempo, int amenazas, int progreso, int retencion)
     {
         KPIData data = new KPIData();
 
-        // 🔧 USER REAL (por ahora PlayerPrefs)
-        data.id_usuario = PlayerPrefs.GetInt("userId", 1);
+        data.id_usuario = PlayerPrefs.GetInt("userId", -1);
+
+        if(data.id_usuario == -1)
+        {
+            Debug.LogError("NO SE RECIBIO USER ID DESDE REACT");
+            return;
+        }
 
         data.tiempo_jugado = tiempo;
         data.amenazas_detectadas = amenazas;
         data.progreso = progreso;
         data.tasa_retencion = retencion;
+
+        Debug.Log("=== ENVIANDO KPI ===");
+        Debug.Log("Usuario: " + data.id_usuario);
+        Debug.Log("Tiempo: " + data.tiempo_jugado);
+        Debug.Log("Amenazas: " + data.amenazas_detectadas);
 
         StartCoroutine(PostKPI(data));
     }

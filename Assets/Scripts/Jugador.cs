@@ -52,12 +52,29 @@ public class Jugador : MonoBehaviour
         rb.MovePosition(rb.position + movement * velocidad * Time.fixedDeltaTime);
     }
 
-    void FinJuego()
+   void FinJuego()
     {
+        Debug.Log("FIN JUEGO");
+
         if (Timer.main != null)
         {
             PlayerData.SetTiempoJugado(Timer.main.GetTiempo());
         }
+        
+        APIManager api = FindObjectOfType<APIManager>();
+
+        Debug.Log("API encontrada = " + (api != null));
+
+        if(api != null)
+        {
+            api.SendKPI(
+                Mathf.RoundToInt(Timer.main.GetTiempo()),
+                GameManager.main.amenazasDetectadas,
+                50,
+                50
+            );
+        }
+
         Time.timeScale = 1f;
         SceneManager.LoadScene("GameOver");
     }

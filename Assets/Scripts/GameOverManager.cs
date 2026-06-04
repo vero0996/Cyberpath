@@ -4,25 +4,18 @@ public class GameOverManager : MonoBehaviour
 {
     public void GameOver()
     {
+        Debug.Log("GAME OVER EJECUTADO");
         GameManager.main.victoria = false;
 
         APIManager api = FindObjectOfType<APIManager>();
 
-        int tiempo =
-            Mathf.RoundToInt(Timer.main.GetTiempo());
-
-        int amenazas =
-            GameManager.main.amenazasDetectadas;
-
-        int progreso = 50;
-
-        int retencion = 50;
+        int tiempo = Mathf.RoundToInt(Timer.main.GetTiempo());
 
         api.SendKPI(
             tiempo,
-            amenazas,
-            progreso,
-            retencion
+            GameManager.main.amenazasDetectadas,
+            100,
+            100
         );
     }
 }

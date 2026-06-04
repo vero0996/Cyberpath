@@ -3,26 +3,20 @@ using UnityEngine;
 public class VictoryManager : MonoBehaviour
 {
     public void Victoria()
-    {
-        GameManager.main.victoria = true;
+{
+    Debug.Log("VICTORIA EJECUTADA");
 
-        APIManager api = FindObjectOfType<APIManager>();
+    GameManager.main.victoria = true;
 
-        int tiempo =
-            Mathf.RoundToInt(Timer.main.GetTiempo());
+    APIManager api = FindObjectOfType<APIManager>();
 
-        int amenazas =
-            GameManager.main.amenazasDetectadas;
+    int tiempo = Mathf.RoundToInt(Timer.main.GetTiempo());
 
-        int progreso = 100;
-
-        int retencion = 100;
-
-        api.SendKPI(
-            tiempo,
-            amenazas,
-            progreso,
-            retencion
-        );
-    }
+    api.SendKPI(
+        tiempo,
+        GameManager.main.amenazasDetectadas,
+        100,
+        100
+    );
+}
 }
