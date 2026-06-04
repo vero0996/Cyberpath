@@ -52,16 +52,22 @@ public class MessageManager : MonoBehaviour
         if (messageText != null)
             messageText.gameObject.SetActive(true);
 
-        if (messageText != null)
-            messageText.text = message;
+        // Mensaje estilo sistema
+        messageText.text = "<color=#CD163F>[SYSTEM]</color>\n";
+
+        foreach(char c in message)
+        {
+            messageText.text += c;
+            yield return new WaitForSecondsRealtime(0.02f);
+        }
 
         yield return new WaitForSecondsRealtime(duration);
 
         messageCoroutine = null;
-        if (id != messageId)
-        yield break;
 
-       
+        if (id != messageId)
+            yield break;
+
         ClearMessage();
     }
 
