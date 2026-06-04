@@ -25,7 +25,7 @@ public class SceneLoader : MonoBehaviour
     public void GoToResults()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Victory");
+        SceneManager.LoadScene("Achievement");
     }
 
     public void ExitGame()

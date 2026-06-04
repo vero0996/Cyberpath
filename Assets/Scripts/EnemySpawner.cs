@@ -16,6 +16,8 @@ public class EnemySpawner : MonoBehaviour
     public TextMeshProUGUI waveMessage;
     public float waveMessageDuration = 3f;
 
+    public static int WavesCompletadas;
+
     void Start()
     {
         ContadorEnem.RecalculateFromScene();
@@ -29,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
             Wave wave = waves[currentWave];
 
             yield return new WaitForSeconds(wave.startDelay);
+
 
             if (waveMessage != null)
             {
@@ -108,6 +111,9 @@ public class EnemySpawner : MonoBehaviour
             {
                 yield return null;
             }
+
+            PlayerData.SetWavesCompletadas(currentWave + 1);
+
 
             if (waveMessage != null)
             {

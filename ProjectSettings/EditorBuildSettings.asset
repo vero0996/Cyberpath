@@ -18,13 +18,13 @@ EditorBuildSettings:
     path: Assets/Scenes/GamePlay.unity
     guid: 2a715000135df05409a436fbed49a257
   - enabled: 1
-    path: Assets/Scenes/Victory.unity
+    path: Assets/Scenes/Achievement.unity
     guid: a2d567584079e804c8e2db4f2eecb497
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 806a619627898b343b9720c8914c018a
   - enabled: 1
-    path: Assets/Scenes/Results.unity
+    path: Assets/Scenes/Victory.unity
     guid: b51aa42a0e945904b82a6d330835626d
   - enabled: 1
     path: Assets/Scenes/Credits.unity

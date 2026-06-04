@@ -112,4 +112,17 @@ public class PlayerData : MonoBehaviour
             main.defensasUsadas++;
         }
     }
+
+    [SerializeField] private int wavesCompletadas;
+
+    public static int WavesCompletadas =>
+        main != null ? main.wavesCompletadas : 0;
+
+    public static void SetWavesCompletadas(int wave)
+    {
+        if(main != null)
+        {
+            main.wavesCompletadas = wave;
+        }
+    }
 }
