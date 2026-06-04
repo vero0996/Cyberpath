@@ -46,7 +46,7 @@ public class LevelManager : MonoBehaviour
             Debug.Log("No tienes suficientes monedas");
 
             if (MessageManager.main != null)
-                MessageManager.main.ShowMessage("No tienes suficientes monedas!");
+                MessageManager.main.ShowMessage("Not enough coins!");
 
             return false;
         }
@@ -65,13 +65,13 @@ public class LevelManager : MonoBehaviour
         if (moneda < 1000)
         {
             if (MessageManager.main != null)
-                MessageManager.main.ShowMessage("No tienes suficientes monedas!");
+                MessageManager.main.ShowMessage("Not enough coins!");
             return;
         }
 
         jugador.Health += 300;
         GastarMoneda(1000);
         if (MessageManager.main != null)
-            MessageManager.main.ShowMessage("Curación +300!");
+            MessageManager.main.ShowMessage("Healing +300!");
     }
 }
