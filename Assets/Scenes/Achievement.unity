@@ -427,7 +427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 528, y: -257}
+  m_AnchoredPosition: {x: 528.00006, y: -257}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &262232056
@@ -1559,11 +1559,11 @@ Transform:
   m_Children:
   - {fileID: 1457423960}
   - {fileID: 1700777214}
-  - {fileID: 262232055}
+  - {fileID: 933099380}
   - {fileID: 1465848834}
   - {fileID: 832762779}
   - {fileID: 1453823586}
-  - {fileID: 933099380}
+  - {fileID: 262232055}
   - {fileID: 135123670}
   m_Father: {fileID: 1721602782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3017,9 +3017,9 @@ MonoBehaviour:
   bestScoreText: {fileID: 1457423961}
   longestTimeText: {fileID: 1453823587}
   totalKillsText: {fileID: 832762780}
-  totalDefensesText: {fileID: 933099381}
-  completedWavesText: {fileID: 262232056}
-  moneySpentText: {fileID: 1465848835}
+  totalDefensesText: {fileID: 262232056}
+  completedWavesText: {fileID: 1465848835}
+  moneySpentText: {fileID: 933099381}
   totalRoundsText: {fileID: 1700777215}
   totalWavesText: {fileID: 135123671}
 --- !u!1 &1965089403
