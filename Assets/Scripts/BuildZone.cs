@@ -77,7 +77,7 @@ public class BuildZone : MonoBehaviour
 
                     if (MessageManager.main != null)
                     {
-                        MessageManager.main.ShowMessage("No hay defensa para vender!");
+                        MessageManager.main.ShowMessage("There is no defense to sell!");
                     }
 
                     return;
@@ -91,7 +91,7 @@ public class BuildZone : MonoBehaviour
 
                     if (MessageManager.main != null)
                     {
-                        MessageManager.main.ShowMessage("No se puede vender la única defensa!");
+                        MessageManager.main.ShowMessage("Cannot sell the only defense!");
                     }
 
                     return;
@@ -111,7 +111,7 @@ public class BuildZone : MonoBehaviour
 
                 if (MessageManager.main != null)
                 {
-                    MessageManager.main.ShowMessage("Defensa vendida!");
+                    MessageManager.main.ShowMessage("Defense sold!");
                 }
             }
         }
@@ -130,7 +130,7 @@ public class BuildZone : MonoBehaviour
             if (MessageManager.main != null)
             {
                 MessageManager.main.ShowMessage(
-                    "Presiona E para colocar una defensa, Q para venderla"
+                    "Press E to place a defense, Q to sell it"
                 );
             }
         }
