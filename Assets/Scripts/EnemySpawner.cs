@@ -128,6 +128,17 @@ public class EnemySpawner : MonoBehaviour
             }
             yield return new WaitForSeconds(wave.timeBetweenWaves);
 
+            if (currentWave > 0 && currentWave % 2 == 0) {
+                foreach (Enemy enemy in wave.enemies)
+                {
+                    EnemyAI2D ai = enemy.enemyPrefab.GetComponent<EnemyAI2D>();
+                    Damage damage = enemy.enemyPrefab.GetComponent<Damage>();
+
+                    ai.speed *= 1.1f;
+                    damage.hitPoints += 2;
+                    damage.Daño += 1;
+                }
+            }
             currentWave++;
         }
        
