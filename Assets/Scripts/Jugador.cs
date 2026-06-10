@@ -57,23 +57,24 @@ public class Jugador : MonoBehaviour
         Debug.Log("FIN JUEGO");
 
         if (Timer.main != null)
-        {
             PlayerData.SetTiempoJugado(Timer.main.GetTiempo());
-        }
-        
+
         APIManager api = FindObjectOfType<APIManager>();
 
-        Debug.Log("API encontrada = " + (api != null));
-
-        if(api != null)
+        // Si no existe, lo creamos en el momento
+        if (api == null)
         {
-            api.SendKPI(
-                Mathf.RoundToInt(Timer.main.GetTiempo()),
-                GameManager.main.amenazasDetectadas,
-                50,
-                50
-            );
+            GameObject apiObj = new GameObject("APIManager");
+            api = apiObj.AddComponent<APIManager>();
         }
+
+        api.SendKPI(
+            Mathf.RoundToInt(Timer.main.GetTiempo()),
+            PlayerData.EnemigosMatados,  
+            0,   
+            0    
+        );
+
         GuardarJuego guardarJuego = FindObjectOfType<GuardarJuego>();
         Time.timeScale = 1f;
         guardarJuego.ClearSavedData();
