@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "Da\xF1o": 20
   Cooldown: 1
-  hitPoints: 28
+  hitPoints: 32
   valorMoneda: 20
   valorPuntos: 100
 --- !u!58 &626183290315272238

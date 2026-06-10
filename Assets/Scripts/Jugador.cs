@@ -21,6 +21,7 @@ public class Jugador : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         Health = maxHealth;
         BarraE.maxValue = maxHealth;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,20 +37,31 @@ public class Jugador : MonoBehaviour
 
             // Movimiento isom�trico
             movement = new Vector2(horizontal, vertical).normalized;
-            
+
             if (Health <= 0 && life)
             {
                 Health = 0;
                 life = false;
-                Invoke("FinJuego", 3);
+
+                // Detener movimiento
+                movement = Vector2.zero;
+                rb.linearVelocity = Vector2.zero;
+
+                // Reproducir animación de muerte
+                animator.Play("Jugador_Death");
                 
+                // Esperar a que termine la animación
+                Invoke("FinJuego", 3f);
             }
         }
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * velocidad * Time.fixedDeltaTime);
+        if (life)
+        {
+            rb.MovePosition(rb.position + movement * velocidad * Time.fixedDeltaTime);
+        }
     }
 
    void FinJuego()

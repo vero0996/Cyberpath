@@ -4,7 +4,7 @@ public class PlayerData : MonoBehaviour
 {
     public static PlayerData main;
 
-    private const int InitialMoney = 100;
+    private const int InitialMoney = 150;
 
     [SerializeField] private int monedaActual = InitialMoney;
     [SerializeField] private int puntos;

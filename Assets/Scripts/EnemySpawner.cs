@@ -145,7 +145,7 @@ public class EnemySpawner : MonoBehaviour
 
                     ai.speed *= 1.1f;
                     damage.hitPoints += 2;
-                    damage.DaÃ±o += 1;
+                    damage.Daño += 1;
                 }
             }
             currentWave++;

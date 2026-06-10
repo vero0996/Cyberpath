@@ -1,0 +1,394 @@
+fileFormatVersion: 2
+guid: c28229778bd800f41a89383f4efe1cd9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9167725319898317471
+    second: Animacion jugador_0
+  - first:
+      213: -3524716044196575439
+    second: Animacion jugador_1
+  - first:
+      213: 2741746349785267131
+    second: Animacion jugador_2
+  - first:
+      213: 5119008222557022462
+    second: Animacion jugador_3
+  - first:
+      213: 417920005301691635
+    second: Animacion jugador_4
+  - first:
+      213: 2616552123282097894
+    second: Animacion jugador_5
+  - first:
+      213: 1633542178535866790
+    second: Animacion jugador_6
+  - first:
+      213: 7006807136667914562
+    second: Animacion jugador_7
+  - first:
+      213: 8348082416529265700
+    second: Animacion jugador_8
+  - first:
+      213: -7801668772937341671
+    second: Animacion jugador_9
+  - first:
+      213: -4076440818993541052
+    second: Animacion jugador_10
+  - first:
+      213: 7325548876092820066
+    second: Animacion jugador_11
+  - first:
+      213: 8046589940149842736
+    second: Animacion jugador_12
+  - first:
+      213: -1104238488273572946
+    second: Animacion jugador_13
+  - first:
+      213: 1748441085019585603
+    second: Animacion jugador_14
+  - first:
+      213: -5354948292836683871
+    second: Animacion jugador_15
+  - first:
+      213: 5931941923774260805
+    second: Animacion jugador_16
+  - first:
+      213: 7211770740755278962
+    second: Animacion jugador_17
+  - first:
+      213: -7845570095090213443
+    second: Animacion jugador_18
+  - first:
+      213: -7767837707424981887
+    second: Animacion jugador_19
+  - first:
+      213: 8812264257839821689
+    second: Animacion jugador_20
+  - first:
+      213: 5868444389534214744
+    second: Animacion jugador_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Animacion jugador_0
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 583
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f92c4e21b9d4a3f70800000000000000
+      internalID: 9167725319898317471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion jugador_1
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 582
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1370b8bbe61b51fc0800000000000000
+      internalID: -3524716044196575439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion jugador_2
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 582
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbbbc2b57c3ac0620800000000000000
+      internalID: 2741746349785267131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion jugador_3
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 583
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef8a0d35bde5a0740800000000000000
+      internalID: 5119008222557022462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion jugador_4
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 466
+        width: 58
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f46984d700ccc500800000000000000
+      internalID: 417920005301691635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion jugador_10
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 584
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 440dcfb4ca29d67c0800000000000000
+      internalID: -4076440818993541052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion jugador_12
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 585
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 033fcdbfaea3baf60800000000000000
+      internalID: 8046589940149842736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion jugador_18
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 466
+        width: 53
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd58bde09fee1390800000000000000
+      internalID: -7845570095090213443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: cdd834c38128a70468df272b7a47aff6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Animacion jugador_0: 9167725319898317471
+      Animacion jugador_1: -3524716044196575439
+      Animacion jugador_10: -4076440818993541052
+      Animacion jugador_11: 7325548876092820066
+      Animacion jugador_12: 8046589940149842736
+      Animacion jugador_13: -1104238488273572946
+      Animacion jugador_14: 1748441085019585603
+      Animacion jugador_15: -5354948292836683871
+      Animacion jugador_16: 5931941923774260805
+      Animacion jugador_17: 7211770740755278962
+      Animacion jugador_18: -7845570095090213443
+      Animacion jugador_19: -7767837707424981887
+      Animacion jugador_2: 2741746349785267131
+      Animacion jugador_20: 8812264257839821689
+      Animacion jugador_21: 5868444389534214744
+      Animacion jugador_3: 5119008222557022462
+      Animacion jugador_4: 417920005301691635
+      Animacion jugador_5: 2616552123282097894
+      Animacion jugador_6: 1633542178535866790
+      Animacion jugador_7: 7006807136667914562
+      Animacion jugador_8: 8348082416529265700
+      Animacion jugador_9: -7801668772937341671
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
