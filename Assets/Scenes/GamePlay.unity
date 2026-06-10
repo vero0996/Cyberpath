@@ -8171,8 +8171,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1284695390}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+      - m_Target: {fileID: 1424677437}
+        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: GetVida
         m_Mode: 2
         m_Arguments:

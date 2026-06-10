@@ -49,6 +49,23 @@ public class BuildManager : MonoBehaviour
         defensaSelected = indexTorre ;
     }
 
+
+    public void GetVida(Jugador jugador)
+    {
+
+        if (LevelManager.main.moneda < 1000)
+        {
+            if (MessageManager.main != null)
+                MessageManager.main.ShowMessage("Not enough coins!");
+            return;
+        }
+
+        jugador.Health += 300;
+        LevelManager.main.GastarMoneda(1000);
+        if (MessageManager.main != null)
+            MessageManager.main.ShowMessage("Healing +300!");
+    }
+
     public int GetPrice(GameObject instance)
     {
         if (instance == null) return -1;
