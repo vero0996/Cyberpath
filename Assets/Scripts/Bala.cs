@@ -35,7 +35,7 @@ public class Bala : MonoBehaviour
         // Llamar al componente Damage del enemigo si existe
         if (other.TryGetComponent<Damage>(out var damageComp))
         {
-            damageComp.RecibeDaño(dmg);
+            damageComp.RecibeDano(dmg);
             Destroy(gameObject);
             return;
         }

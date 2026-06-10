@@ -3,7 +3,7 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     [Header("Atributos")]
-    [SerializeField] public int Daño;
+    [SerializeField] public int Dano;
     [SerializeField] private float Cooldown = 1f;
     
  
@@ -40,14 +40,14 @@ public class Damage : MonoBehaviour
                 // si es el primer contacto, golpea instant�neo
                 if (timerDefensa == 0f)
                 {
-                    building.TakeDamage(Daño);
+                    building.TakeDamage(Dano);
                 }
 
                 timerDefensa += Time.deltaTime;
 
                 if (timerDefensa >= Cooldown)
                 {
-                    building.TakeDamage(Daño);
+                    building.TakeDamage(Dano);
                     timerDefensa = 0f;
                 }
             }
@@ -65,7 +65,7 @@ public class Damage : MonoBehaviour
     [SerializeField] public int valorPuntos;
 
     private bool isDead = false;
-    public void RecibeDaño(int dmg)
+    public void RecibeDano(int dmg)
     {
         hitPoints -= dmg;
 
