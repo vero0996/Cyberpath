@@ -27,6 +27,11 @@ public class BuildManager : MonoBehaviour
         if (torre == null || torre.Length == 0) return;
         torre[0] = null;
     }
+    // getter para acceder al array de torres
+    public Torres[] GetTorres()
+    {
+        return torre;
+    }
 
     public Torres GetSelectedDefensa()
     {
@@ -42,6 +47,23 @@ public class BuildManager : MonoBehaviour
     public void SetSelectedDefensa(int indexTorre)
     {
         defensaSelected = indexTorre ;
+    }
+
+
+    public void GetVida(Jugador jugador)
+    {
+
+        if (LevelManager.main.moneda < 1000)
+        {
+            if (MessageManager.main != null)
+                MessageManager.main.ShowMessage("Not enough coins!");
+            return;
+        }
+
+        jugador.Health += 300;
+        LevelManager.main.GastarMoneda(1000);
+        if (MessageManager.main != null)
+            MessageManager.main.ShowMessage("Healing +300!");
     }
 
     public int GetPrice(GameObject instance)

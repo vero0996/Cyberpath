@@ -13,12 +13,20 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private int dineroGastado;
     [SerializeField] private int defensasUsadas;
 
+    [Header("Estado Pausa")]
+    [SerializeField] private bool isPaused = false;
+    [SerializeField] private int currentWavePaused = 0;
+
     public static int MonedaActual => main != null ? main.monedaActual : InitialMoney;
     public static int Puntos => main != null ? main.puntos : 0;
     public static int EnemigosMatados => main != null ? main.enemigosMatados : 0;
     public static float TiempoJugado => main != null ? main.tiempoJugado : 0f;
     public static int DineroGastado => main != null ? main.dineroGastado : 0;
     public static int DefensasUsadas => main != null ? main.defensasUsadas : 0;
+    public static int WavesCompletadas => main != null ? main.wavesCompletadas : 0;
+    public static bool IsPaused => main != null ? main.isPaused : false;
+    public static int CurrentWavePaused => main != null ? main.currentWavePaused : 0;
+
 
     private void Awake()
     {
@@ -39,6 +47,12 @@ public class PlayerData : MonoBehaviour
         {
             return;
         }
+        // Solo resetear si NO hay pausa guardada
+        if (main.isPaused)
+        {
+            Debug.Log("PlayerData: Match no se resetea porque hay pausa guardada.");
+            return;
+        }
 
         main.monedaActual = InitialMoney;
         main.puntos = 0;
@@ -46,6 +60,9 @@ public class PlayerData : MonoBehaviour
         main.tiempoJugado = 0f;
         main.dineroGastado = 0;
         main.defensasUsadas = 0;
+        main.wavesCompletadas = 0;
+        main.isPaused = false;
+        main.currentWavePaused = 0;
     }
 
     public static void SetTiempoJugado(float nuevoTiempo)
@@ -127,14 +144,24 @@ public class PlayerData : MonoBehaviour
 
     [SerializeField] private int wavesCompletadas;
 
-    public static int WavesCompletadas =>
-        main != null ? main.wavesCompletadas : 0;
-
     public static void SetWavesCompletadas(int wave)
     {
         if(main != null)
         {
             main.wavesCompletadas = wave;
         }
+    }
+
+    // manejar pausa
+    public static void SetIsPaused(bool paused)
+    {
+        if (main != null)
+            main.isPaused = paused;
+    }
+
+    public static void SetCurrentWave(int waveIndex)
+    {
+        if (main != null)
+            main.currentWavePaused = waveIndex;
     }
 }

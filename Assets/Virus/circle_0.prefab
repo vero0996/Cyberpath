@@ -107,7 +107,7 @@ MonoBehaviour:
   waypoints: []
   speed: 3
   damageToPlayer: 250
-  detectionRange: 1
+  detectionRange: 0.6
 --- !u!114 &6124653569183835315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17cb770cac1e004c836b7ba2dcc429d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "Da\xF1o": 50
-  Cooldown: 0.4
+  "Da\xF1o": 10
+  Cooldown: 0.7
   hitPoints: 50
   valorMoneda: 70
   valorPuntos: 600

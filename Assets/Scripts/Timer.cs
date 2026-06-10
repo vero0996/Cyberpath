@@ -20,31 +20,37 @@ public class Timer : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        GetTiempo();
     }
 
     private void Update()
-{
-    tiempoTranscurrido += Time.deltaTime;
-    PlayerData.SetTiempoJugado(tiempoTranscurrido);
-
-    Debug.Log(
-        $"Tiempo={tiempoTranscurrido} | TimeScale={Time.timeScale}"
-    );
-
-    int minutos = Mathf.FloorToInt(tiempoTranscurrido / 60);
-    int segundos = Mathf.FloorToInt(tiempoTranscurrido % 60);
-
-    if (timerText != null)
     {
-        timerText.text = string.Format("{0:00}:{1:00}", minutos, segundos);
+        ;
+        tiempoTranscurrido += Time.deltaTime;
+        PlayerData.SetTiempoJugado(tiempoTranscurrido);
+
+        Debug.Log(
+            $"Tiempo={tiempoTranscurrido} | TimeScale={Time.timeScale}"
+        );
+
+        int minutos = Mathf.FloorToInt(tiempoTranscurrido / 60);
+        int segundos = Mathf.FloorToInt(tiempoTranscurrido % 60);
+
+        if (timerText != null)
+        {
+            timerText.text = string.Format("{0:00}:{1:00}", minutos, segundos);
+        }
     }
-}
 
     public float GetTiempo()
     {
         return tiempoTranscurrido;
     }
 
+    public void SetTiempo(float tiempo)
+    {
+        tiempoTranscurrido = tiempo;
+    }
     public string GetTiempoFormateado()
     {
         int minutos = Mathf.FloorToInt(tiempoTranscurrido / 60);
