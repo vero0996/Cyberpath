@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\erick\\Cyberpath\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\EnemySpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\EnemySpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Virus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Virus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\PlayerData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\PlayerData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\MessageManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\MessageManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\BuildZone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\BuildZone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\LevelManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,40 +27,36 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Damage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\DeathZone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\DeathZone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\EnemySpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\EnemySpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\ContadorEnem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ContadorEnem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Virus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Virus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Defensas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Defensas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\BuildManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\BuildManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Jugador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Jugador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\BuildManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\BuildManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Defensas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Defensas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Timer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Tienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Tienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\DeathZone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\DeathZone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\BuildZone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\BuildZone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Path.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -85,24 +93,116 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Virus.cs",
               "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Virus.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Virus.cs",
               "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Virus.cs",
               "RelativeToolTip": "Assets\\Scripts\\Virus.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAA8AAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAA8AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-22T00:06:33.893Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerData.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\PlayerData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerData.cs",
+              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\PlayerData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerData.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAEUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T22:02:40.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MessageManager.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\MessageManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MessageManager.cs",
+              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\MessageManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MessageManager.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T21:26:31.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LevelManager.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\LevelManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LevelManager.cs",
+              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\LevelManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LevelManager.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADAAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T22:04:29.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Damage.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Damage.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Damage.cs",
+              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Damage.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Damage.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAABkAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T22:58:34.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DeathZone.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\DeathZone.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DeathZone.cs",
+              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\DeathZone.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DeathZone.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T22:03:23Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "BuildZone.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\BuildZone.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\BuildZone.cs",
+              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\BuildZone.cs",
+              "RelativeToolTip": "Assets\\Scripts\\BuildZone.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAE8AAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T23:19:27.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EnemySpawner.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\EnemySpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemySpawner.cs",
+              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\EnemySpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemySpawner.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAgwHgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T01:39:40.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ContadorEnem.cs",
               "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\ContadorEnem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ContadorEnem.cs",
@@ -110,11 +210,38 @@
               "RelativeToolTip": "Assets\\Scripts\\ContadorEnem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T04:05:53.706Z"
+              "WhenOpened": "2026-06-03T04:05:53.706Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
+              "Title": "BuildManager.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\BuildManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\BuildManager.cs",
+              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\BuildManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\BuildManager.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T00:03:50.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Jugador.cs",
+              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Jugador.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Jugador.cs",
+              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Jugador.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Jugador.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T23:20:59.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Defensas.cs",
               "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Defensas.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Defensas.cs",
@@ -126,57 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EnemySpawner.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\EnemySpawner.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemySpawner.cs",
-              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\EnemySpawner.cs",
-              "RelativeToolTip": "Assets\\Scripts\\EnemySpawner.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-14T01:39:40.276Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LevelManager.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\LevelManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\LevelManager.cs",
-              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\LevelManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\LevelManager.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T22:04:29.425Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BuildManager.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\BuildManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\BuildManager.cs",
-              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\BuildManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\BuildManager.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T00:03:50.325Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Damage.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Damage.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Damage.cs",
-              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Damage.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Damage.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEkAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T22:58:34.929Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "Timer.cs",
               "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Timer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Timer.cs",
@@ -188,19 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Jugador.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Jugador.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Jugador.cs",
-              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Jugador.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Jugador.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T23:20:59.164Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "Tienda.cs",
               "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Tienda.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Tienda.cs",
@@ -212,31 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DeathZone.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\DeathZone.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\DeathZone.cs",
-              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\DeathZone.cs",
-              "RelativeToolTip": "Assets\\Scripts\\DeathZone.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T22:03:23Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "BuildZone.cs",
-              "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\BuildZone.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\BuildZone.cs",
-              "ToolTip": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\BuildZone.cs",
-              "RelativeToolTip": "Assets\\Scripts\\BuildZone.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T23:19:27.161Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Path.cs",
               "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Path.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Path.cs",
@@ -248,7 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Torres.cs",
               "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Torres.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Torres.cs",
@@ -260,7 +301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "TutorialOverlay.cs",
               "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\TutorialOverlay.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TutorialOverlay.cs",
@@ -272,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "APIManager.cs",
               "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\APIManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\APIManager.cs",
@@ -284,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Bala.cs",
               "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\Bala.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bala.cs",
@@ -296,7 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "PausarJuego.cs",
               "DocumentMoniker": "C:\\Users\\erick\\Cyberpath\\Assets\\Scripts\\PausarJuego.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PausarJuego.cs",
@@ -308,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\erick\\My project\\Assets\\Scripts\\Player.cs",
               "RelativeDocumentMoniker": "..\\My project\\Assets\\Scripts\\Player.cs",
