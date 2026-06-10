@@ -97,21 +97,6 @@ public class LevelManager : MonoBehaviour
         PlayerData.AddPuntos(amount);
     }
 
-    public void GetVida(Jugador jugador)
-    {
-        
-        if (moneda < 1000)
-        {
-            if (MessageManager.main != null)
-                MessageManager.main.ShowMessage("Not enough coins!");
-            return;
-        }
-
-        jugador.Health += 300;
-        GastarMoneda(1000);
-        if (MessageManager.main != null)
-            MessageManager.main.ShowMessage("Healing +300!");
-    }
     public void StartEnemyDrain()
     {
         if (enemyDrainCoroutine == null)
