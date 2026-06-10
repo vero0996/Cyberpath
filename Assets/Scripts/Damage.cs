@@ -3,7 +3,7 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     [Header("Atributos")]
-    [SerializeField] private int Daño;
+    [SerializeField] public int Daño;
     [SerializeField] private float Cooldown = 1f;
     
  
@@ -60,7 +60,7 @@ public class Damage : MonoBehaviour
     }
     // Daño a enemigos
     [Header("Vida")]
-    [SerializeField] private int hitPoints;
+    [SerializeField] public int hitPoints;
     [SerializeField] public int valorMoneda;
     [SerializeField] public int valorPuntos;
 

@@ -4097,11 +4097,11 @@ MonoBehaviour:
   waves:
   - enemies:
     - enemyPrefab: {fileID: 2571730012667918543, guid: 25054af18712e4045b0adf0f9ca54bd0, type: 3}
-      amount: 20
+      amount: 3
       spawnRate: 1.4
       unlockAfter: 0
     - enemyPrefab: {fileID: 5217435081810752047, guid: 24ef4dba0dff8ee48afba0b974d05969, type: 3}
-      amount: 15
+      amount: 2
       spawnRate: 1.8
       unlockAfter: 7
     timeBetweenWaves: 15
@@ -4941,6 +4941,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f22316d0d756634d842d549ec42fec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableEnemyDrain: 0
+  drainInterval: 2
+  drainAmount: 4
 --- !u!4 &1284695391
 Transform:
   m_ObjectHideFlags: 0
@@ -4976,7 +4979,7 @@ MonoBehaviour:
     precio: 100
     prefab: {fileID: 2840532180297969078, guid: d76cc247532cc1341b93b62eae58202c, type: 3}
   - nombre: Defensa 2
-    precio: 100
+    precio: 500
     prefab: {fileID: 3731978247623848866, guid: 615e0b5c21ba9554689f34fd586a7814, type: 3}
 --- !u!114 &1284695393
 MonoBehaviour:
@@ -7498,22 +7501,22 @@ MonoBehaviour:
   waves:
   - enemies:
     - enemyPrefab: {fileID: 2571730012667918543, guid: 25054af18712e4045b0adf0f9ca54bd0, type: 3}
-      amount: 20
-      spawnRate: 1.4
+      amount: 3
+      spawnRate: 1.65
       unlockAfter: 0
     - enemyPrefab: {fileID: 5217435081810752047, guid: 24ef4dba0dff8ee48afba0b974d05969, type: 3}
-      amount: 20
+      amount: 2
       spawnRate: 1.8
       unlockAfter: 7
     timeBetweenWaves: 15
     startDelay: 3
   - enemies:
     - enemyPrefab: {fileID: 2571730012667918543, guid: 25054af18712e4045b0adf0f9ca54bd0, type: 3}
-      amount: 25
+      amount: 2
       spawnRate: 1.3
       unlockAfter: 0
     - enemyPrefab: {fileID: 5217435081810752047, guid: 24ef4dba0dff8ee48afba0b974d05969, type: 3}
-      amount: 20
+      amount: 2
       spawnRate: 1.6
       unlockAfter: 5
     timeBetweenWaves: 15

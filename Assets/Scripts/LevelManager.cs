@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class LevelManager : MonoBehaviour
 {
@@ -8,6 +9,13 @@ public class LevelManager : MonoBehaviour
     [Header("Datos jugador")]
     public int moneda => PlayerData.MonedaActual;
     public int puntos => PlayerData.Puntos;
+
+    [Header("Enemy money drain")]
+    public bool enableEnemyDrain;
+    public float drainInterval = 5f;
+    public int drainAmount = 1;
+
+    private Coroutine enemyDrainCoroutine;
 
     private void Awake()
     {
@@ -26,6 +34,28 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         PlayerData.ResetMatch();
+        enableEnemyDrain = false;
+
+    }
+
+    private void Update()
+    {
+        if (ContadorEnem.Alive >= 15)
+        {
+            if (!enableEnemyDrain)
+            {
+                enableEnemyDrain = true;
+                StartEnemyDrain();
+            }
+        }
+        else
+        {
+            if (enableEnemyDrain)
+            {
+                enableEnemyDrain = false;
+                StopEnemyDrain();
+            }
+        }
     }
 
     public void Menu()
@@ -74,4 +104,31 @@ public class LevelManager : MonoBehaviour
         if (MessageManager.main != null)
             MessageManager.main.ShowMessage("Healing +300!");
     }
+    public void StartEnemyDrain()
+    {
+        if (enemyDrainCoroutine == null)
+            enemyDrainCoroutine = StartCoroutine(EnemyDrainRoutine());
+    }
+
+    public void StopEnemyDrain()
+    {
+        if (enemyDrainCoroutine != null)
+        {
+            StopCoroutine(enemyDrainCoroutine);
+            enemyDrainCoroutine = null;
+        }
+    }
+    private IEnumerator EnemyDrainRoutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(drainInterval);
+
+            int deducted = PlayerData.DeductMoneda(drainAmount);
+            
+
+            Debug.Log($"Enemy drain: -{deducted} coins. Remaining: {moneda}");
+        }
+    }
+
 }

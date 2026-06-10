@@ -67,9 +67,11 @@ public class PlayerData : MonoBehaviour
     public static void AddMoneda(int amount)
     {
         if (main != null)
-        {
+        { 
             main.monedaActual += amount;
+            Debug.Log($"Moneda AGREGADA");
         }
+        
     }
 
     public static bool GastarMoneda(int amount)
@@ -87,6 +89,16 @@ public class PlayerData : MonoBehaviour
         main.monedaActual -= amount;
         main.dineroGastado += amount;
         return true;
+    }
+
+    public static int DeductMoneda(int amount)
+    {
+        if (main == null || amount <= 0) return 0;
+
+        int toDeduct = Mathf.Min(main.monedaActual, amount);
+        main.monedaActual -= toDeduct;
+        main.dineroGastado += toDeduct;
+        return toDeduct;
     }
 
     public static void AddPuntos(int amount)
