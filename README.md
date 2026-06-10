@@ -38,13 +38,19 @@ Estan dentro del objeto Casillas, donde cada uno tienen el codigo Build Zone. En
 
 ## Level Manager
 Este objeto tiene las funciones generales del videojuego. Se compone de 3 scripts:
+
 LevelManager
-- Este codigo define como se le asigna al jugador el dinero, pudiendo agregar dinero al derrotar un enemigo, y quitar cuando se construlle una defensa. Se le puede asignar en los atributos una cantidad de dinero inicial. Tambien es donde 
+- Este codigo define como se le asigna al jugador el dinero, pudiendo agregar dinero al derrotar un enemigo, y quitar cuando se construlle una defensa. Se le puede asignar en los atributos una cantidad de dinero inicial. Tambien es donde se define la funcion de drenar monedas si hay muchos enemigos en pantalla
+
 PlayerData
 - Este codigo es donde se guarda toda la informacion del jugador durante la partida, cuantas monedas tiene actualmente, puntos, enemigos eliminados, dinero gastado,defensas usadas y tiempo jugado.
 
-BuildManger
-- Este es el codigo que permite al jugador construir defensas en la Build zone, teniendo que asignarle los diferentes tipos de defensas que existen para que este los guarde en una lista que sera llamada por la tienda para definir cual es la defensa que se desea construir. En los atributos se debe asignar cuanto cuesta construir cada defensa.
+GuardarJuego
+-Aqui es donde se guardan todos los datos del jugador en la partida actual si este decide salir de esta a travez del boton salir en el menu de pausa.
+
+## BuildManger
+- Este es el codigo que permite al jugador construir defensas en la Build zone, teniendo que asignarle los diferentes tipos de defensas que existen para que este los guarde en una lista que sera llamada por la tienda para definir cual es la defensa que se desea construir. En los atributos se debe asignar cuanto cuesta construir cada defensa. Dentro de este codigo esta tambien la funcion getVida con la que el jugador puede curarse.
+Este esta en el objeto Tienda dentro del objeto Canvas
 
 ## Defensas
 Estas son las que atacana a los enemigos gracias a la bala. Las defensas solo se pueden colocar en las BuildZone gracias al BuildManager si el jugador tiene el suficiente dinero. Estas constantemente estan revisando si hay algun enemigo en rango para atacar con la etiqueta de layer "Enemigos". Tienen un objeto hijo llamado firepoint que es donde aparece la bala cuando se llama a la instruccion "Disparar".
