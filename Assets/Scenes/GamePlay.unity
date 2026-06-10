@@ -1529,7 +1529,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1284695392}
+      - m_Target: {fileID: 1424677437}
         m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: SetSelectedDefensa
         m_Mode: 3
@@ -3996,7 +3996,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1284695392}
+      - m_Target: {fileID: 1424677437}
         m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: SetSelectedDefensa
         m_Mode: 3
@@ -4305,6 +4305,7 @@ MonoBehaviour:
       unlockAfter: 5
     timeBetweenWaves: 15
     startDelay: 3
+  currentWave: 0
   debugEnemiesAlive: 0
   waveMessage: {fileID: 1992948199}
   waveMessageDuration: 5
@@ -4707,8 +4708,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1284695390}
-        m_TargetAssemblyTypeName: VolverMenu, Assembly-CSharp
+      - m_Target: {fileID: 847346935}
+        m_TargetAssemblyTypeName: PausarJuego, Assembly-CSharp
         m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
@@ -5154,8 +5155,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1284695391}
   - component: {fileID: 1284695390}
-  - component: {fileID: 1284695392}
   - component: {fileID: 1284695393}
+  - component: {fileID: 1284695394}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -5193,28 +5194,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1284695392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284695389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5c66ad0505524744abcb8dfd606be42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  torre:
-  - nombre: 
-    precio: 0
-    prefab: {fileID: 0}
-  - nombre: Defensa basica
-    precio: 100
-    prefab: {fileID: 2840532180297969078, guid: d76cc247532cc1341b93b62eae58202c, type: 3}
-  - nombre: Defensa 2
-    precio: 500
-    prefab: {fileID: 3731978247623848866, guid: 615e0b5c21ba9554689f34fd586a7814, type: 3}
 --- !u!114 &1284695393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5227,13 +5206,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbbf13b68e41d4c51a85d996b953d8ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monedaActual: 100
+  monedaActual: 200
   puntos: 0
   enemigosMatados: 0
   tiempoJugado: 0
   dineroGastado: 0
   defensasUsadas: 0
+  isPaused: 0
+  currentWavePaused: 0
   wavesCompletadas: 0
+--- !u!114 &1284695394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284695389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e3ab4ad2834c949a8e20f4418674b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1288388423
 GameObject:
   m_ObjectHideFlags: 0
@@ -5546,6 +5539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1424677435}
   - component: {fileID: 1424677436}
+  - component: {fileID: 1424677437}
   m_Layer: 5
   m_Name: Tienda
   m_TagString: Untagged
@@ -5599,6 +5593,28 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 50}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1424677437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424677434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c66ad0505524744abcb8dfd606be42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torre:
+  - nombre: 
+    precio: 0
+    prefab: {fileID: 0}
+  - nombre: Defensa basica
+    precio: 100
+    prefab: {fileID: 2840532180297969078, guid: d76cc247532cc1341b93b62eae58202c, type: 3}
+  - nombre: Defensa 2
+    precio: 500
+    prefab: {fileID: 3731978247623848866, guid: 615e0b5c21ba9554689f34fd586a7814, type: 3}
 --- !u!1 &1455080081
 GameObject:
   m_ObjectHideFlags: 0
@@ -7829,6 +7845,7 @@ MonoBehaviour:
       unlockAfter: 6
     timeBetweenWaves: 15
     startDelay: 3
+  currentWave: 0
   debugEnemiesAlive: 0
   waveMessage: {fileID: 1992948199}
   waveMessageDuration: 5

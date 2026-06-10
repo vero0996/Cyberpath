@@ -74,8 +74,9 @@ public class Jugador : MonoBehaviour
                 50
             );
         }
-
+        GuardarJuego guardarJuego = FindObjectOfType<GuardarJuego>();
         Time.timeScale = 1f;
+        guardarJuego.ClearSavedData();
         SceneManager.LoadScene("GameOver");
     }
 }

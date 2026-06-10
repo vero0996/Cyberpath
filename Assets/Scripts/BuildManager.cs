@@ -27,6 +27,11 @@ public class BuildManager : MonoBehaviour
         if (torre == null || torre.Length == 0) return;
         torre[0] = null;
     }
+    // getter para acceder al array de torres
+    public Torres[] GetTorres()
+    {
+        return torre;
+    }
 
     public Torres GetSelectedDefensa()
     {

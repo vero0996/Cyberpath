@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;  
 
 public class PausarJuego : MonoBehaviour
 {
@@ -30,6 +31,24 @@ public class PausarJuego : MonoBehaviour
         menuPausa.SetActive(true);
         Time.timeScale = 0f;
         juegoPausado = true;
+    }
+    public void Menu()
+    {
+        Time.timeScale = 1f;
+
+        // Guardar estado actual (wave, monedas, defensas, stats)
+        if (GuardarJuego.main != null)
+        {
+            GuardarJuego.main.SaveGame();
+            Debug.Log("Estado guardado antes de ir al menú.");
+        }
+
+        // Marcar que hay pausa guardada
+        PlayerData.SetIsPaused(true);
+        var spawner = FindObjectOfType<EnemySpawner>();
+        if (spawner != null)
+            PlayerData.SetCurrentWave(spawner.currentWave);
+        SceneManager.LoadScene("MainMenu");
     }
 
 }

@@ -6,6 +6,13 @@ public class SceneLoader : MonoBehaviour
     public void GoToGameplay()
     {
         Time.timeScale = 1f;
+        // NO cargar partida guardada
+        GuardarJuego.LoadSavedGameRequested = false;
+
+        // borrar save anterior
+        if (GuardarJuego.main != null)
+            GuardarJuego.main.ClearSavedData();
+
         PlayerData.ResetMatch();
 
         if (Timer.main != null)
@@ -13,6 +20,21 @@ public class SceneLoader : MonoBehaviour
             Timer.main.ReiniciarTimer();
         }
 
+        SceneManager.LoadScene("GamePlay");
+    }
+
+    public void GoToSavedGame()
+    {
+        if (!GuardarJuego.main.HasSavedGame())
+        {
+            Debug.LogWarning(" No saved game found");
+            return;
+        }
+        Time.timeScale = 1f;
+        PlayerData.ResetMatch();
+
+        //Cargar partida guardada
+        GuardarJuego.LoadSavedGameRequested = true;
         SceneManager.LoadScene("GamePlay");
     }
 

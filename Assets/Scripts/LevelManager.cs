@@ -16,6 +16,8 @@ public class LevelManager : MonoBehaviour
     public int drainAmount = 1;
 
     private Coroutine enemyDrainCoroutine;
+    // número inicial de enemigos de la ronda actual 
+    private int currentWaveInitialEnemies = 0;
 
     private void Awake()
     {
@@ -24,7 +26,7 @@ public class LevelManager : MonoBehaviour
             main = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (main != this)
         {
             Destroy(gameObject);
             return;
@@ -36,6 +38,17 @@ public class LevelManager : MonoBehaviour
         PlayerData.ResetMatch();
         enableEnemyDrain = false;
 
+        // sincronizar con el spawner si ya existe
+        var spawner = FindObjectOfType<EnemySpawner>();
+        if (spawner != null)
+            currentWaveInitialEnemies = spawner.GetInitialEnemyCount(0);
+
+    }
+
+    private void HandleWaveStarted(int waveIndex, int initialEnemyCount)
+    {
+        currentWaveInitialEnemies = initialEnemyCount;
+        Debug.Log($"LevelManager: Wave {waveIndex} started with {initialEnemyCount} enemies.");
     }
 
     private void Update()
@@ -58,11 +71,6 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void Menu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
-    }
 
     public void AddMoneda(int amount)
     {

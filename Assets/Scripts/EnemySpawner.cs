@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;   
 using TMPro;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public Path path;
     public Wave[] waves;
-    private int currentWave = 0;
+    public int currentWave = 0;
 
     [SerializeField]
     private int debugEnemiesAlive;
@@ -20,6 +21,13 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        // Leer wave guardada si existe
+        int savedWave = PlayerPrefs.GetInt("Save_Wave", 0);
+        if (savedWave > 0 && PlayerData.IsPaused)
+        {
+            currentWave = savedWave;
+            Debug.Log($"EnemySpawner: Iniciando desde onda guardada {currentWave}");
+        }
         ContadorEnem.RecalculateFromScene();
         StartCoroutine(SpawnWaves());
     }
@@ -31,7 +39,7 @@ public class EnemySpawner : MonoBehaviour
             Wave wave = waves[currentWave];
 
             yield return new WaitForSeconds(wave.startDelay);
-
+           
 
             if (waveMessage != null)
             {
@@ -58,8 +66,7 @@ public class EnemySpawner : MonoBehaviour
 
             while (totalEnemies > 0)
             {
-                System.Collections.Generic.List<int> availableTypes =
-                    new System.Collections.Generic.List<int>();
+                List<int> availableTypes = new List<int>();
 
                 for (int i = 0; i < wave.enemies.Length; i++)
                 {
@@ -124,6 +131,8 @@ public class EnemySpawner : MonoBehaviour
             {
                 StartCoroutine(ShowVictory(waveMessageDuration));
                 yield return new WaitForSeconds(waveMessageDuration);
+                GuardarJuego guardarJuego = FindObjectOfType<GuardarJuego>();
+                guardarJuego.ClearSavedData();  
                 SceneManager.LoadScene("VICTORY");
             }
             yield return new WaitForSeconds(wave.timeBetweenWaves);
@@ -192,6 +201,16 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         waveMessage.gameObject.SetActive(false);
+    }
+    // Obtener número inicial de enemigos de una wave
+    public int GetInitialEnemyCount(int waveIndex)
+    {
+        if (waves == null || waveIndex < 0 || waveIndex >= waves.Length) return 0;
+        int sum = 0;
+        var wave = waves[waveIndex];
+        if (wave == null || wave.enemies == null) return 0;
+        foreach (var e in wave.enemies) sum += e.amount;
+        return sum;
     }
 }
 
