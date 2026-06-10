@@ -4103,7 +4103,7 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 5217435081810752047, guid: 24ef4dba0dff8ee48afba0b974d05969, type: 3}
       amount: 2
       spawnRate: 1.8
-      unlockAfter: 7
+      unlockAfter: 3
     timeBetweenWaves: 15
     startDelay: 3
   - enemies:
@@ -7507,7 +7507,7 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 5217435081810752047, guid: 24ef4dba0dff8ee48afba0b974d05969, type: 3}
       amount: 2
       spawnRate: 1.8
-      unlockAfter: 7
+      unlockAfter: 3
     timeBetweenWaves: 15
     startDelay: 3
   - enemies:
@@ -7518,7 +7518,7 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 5217435081810752047, guid: 24ef4dba0dff8ee48afba0b974d05969, type: 3}
       amount: 2
       spawnRate: 1.6
-      unlockAfter: 5
+      unlockAfter: 3
     timeBetweenWaves: 15
     startDelay: 3
   - enemies:

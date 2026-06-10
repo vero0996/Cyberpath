@@ -13,6 +13,11 @@ public class SceneLoader : MonoBehaviour
             Timer.main.ReiniciarTimer();
         }
 
+        if (GameManager.main != null)
+        {
+            GameManager.main.ResetAmenazas();
+        }
+
         SceneManager.LoadScene("GamePlay");
     }
 

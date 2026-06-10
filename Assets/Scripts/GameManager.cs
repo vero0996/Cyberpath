@@ -26,4 +26,9 @@ public class GameManager : MonoBehaviour
     {
         amenazasDetectadas++;
     }
+
+    public void ResetAmenazas()
+    {
+        amenazasDetectadas = 0;
+    }
 }
