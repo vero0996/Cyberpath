@@ -145,7 +145,7 @@ public class EnemySpawner : MonoBehaviour
 
                     ai.speed *= 1.1f;
                     damage.hitPoints += 2;
-                    damage.Daño += 1;
+                    damage.Dano += 1;
                 }
             }
             currentWave++;
@@ -202,7 +202,7 @@ public class EnemySpawner : MonoBehaviour
 
         waveMessage.gameObject.SetActive(false);
     }
-    // Obtener número inicial de enemigos de una wave
+    // Obtener nï¿½mero inicial de enemigos de una wave
     public int GetInitialEnemyCount(int waveIndex)
     {
         if (waves == null || waveIndex < 0 || waveIndex >= waves.Length) return 0;
