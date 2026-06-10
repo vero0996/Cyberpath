@@ -37,9 +37,12 @@ Es Donde el jugador pierde vida si el enemigo llega al final del camino y poster
 Estan dentro del objeto Casillas, donde cada uno tienen el codigo Build Zone. En este codigo se evalua si el jugador esta lo suficientemente cerca para poder interactuar, cambiando de color para indicar que es interactuable y asi permitir al jugador colocar defensas llamando a BuildManager en el LevelManager.
 
 ## Level Manager
-Este objeto tiene las funciones generales del videojuego. Se compone de 2 scripts:
+Este objeto tiene las funciones generales del videojuego. Se compone de 3 scripts:
 LevelManager
-- Este codigo define como el jugador puede volver al menu desde el menu de pausa y es como se le asigna al jugador el dinero, pudiendo agregar dinero al derrotar un enemigo, y quitar cuando se construlle una defensa. Se le puede asignar en los atributos una cantidad de dinero inicial.
+- Este codigo define como se le asigna al jugador el dinero, pudiendo agregar dinero al derrotar un enemigo, y quitar cuando se construlle una defensa. Se le puede asignar en los atributos una cantidad de dinero inicial. Tambien es donde 
+PlayerData
+- Este codigo es donde se guarda toda la informacion del jugador durante la partida, cuantas monedas tiene actualmente, puntos, enemigos eliminados, dinero gastado,defensas usadas y tiempo jugado.
+
 BuildManger
 - Este es el codigo que permite al jugador construir defensas en la Build zone, teniendo que asignarle los diferentes tipos de defensas que existen para que este los guarde en una lista que sera llamada por la tienda para definir cual es la defensa que se desea construir. En los atributos se debe asignar cuanto cuesta construir cada defensa.
 
