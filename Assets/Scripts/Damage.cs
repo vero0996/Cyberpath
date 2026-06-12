@@ -69,7 +69,8 @@ public class Damage : MonoBehaviour
     {
         hitPoints -= dmg;
 
-        if( hitPoints <= 0 && !isDead)
+        // Verificar si el enemigo ha muerto después de recibir daño
+        if ( hitPoints <= 0 && !isDead)
         {
             ContadorEnem.Decrement();
             PlayerData.RegistrarEnemigoMatado();

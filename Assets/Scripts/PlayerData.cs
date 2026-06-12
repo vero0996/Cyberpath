@@ -4,28 +4,32 @@ public class PlayerData : MonoBehaviour
 {
     public static PlayerData main;
 
+    // Valores iniciales para las estadísticas del jugador
     private const int InitialMoney = 150;
-
+    
     [SerializeField] private int monedaActual = InitialMoney;
-    [SerializeField] private int puntos;
+    [SerializeField] private int puntos;// puntos acumulados por el jugador
     [SerializeField] private int enemigosMatados;
     [SerializeField] private float tiempoJugado;
-    [SerializeField] private int dineroGastado;
-    [SerializeField] private int defensasUsadas;
+    [SerializeField] private int dineroGastado;// cantidad total de dinero gastado por el jugador
+    [SerializeField] private int defensasUsadas;// cantidad de defensas colocadas por el jugador
 
+    // Propiedades para acceder a las estadísticas del jugador desde otras clases
     [Header("Estado Pausa")]
     [SerializeField] private bool isPaused = false;
     [SerializeField] private int currentWavePaused = 0;
 
+    // Propiedades públicas para acceder a las estadísticas del jugador
     public static int MonedaActual => main != null ? main.monedaActual : InitialMoney;
-    public static int Puntos => main != null ? main.puntos : 0;
-    public static int EnemigosMatados => main != null ? main.enemigosMatados : 0;
-    public static float TiempoJugado => main != null ? main.tiempoJugado : 0f;
-    public static int DineroGastado => main != null ? main.dineroGastado : 0;
-    public static int DefensasUsadas => main != null ? main.defensasUsadas : 0;
-    public static int WavesCompletadas => main != null ? main.wavesCompletadas : 0;
-    public static bool IsPaused => main != null ? main.isPaused : false;
-    public static int CurrentWavePaused => main != null ? main.currentWavePaused : 0;
+    public static int Puntos => main != null ? main.puntos : 0;// puntos acumulados por el jugador
+    public static int EnemigosMatados => main != null ? main.enemigosMatados : 0;// cantidad total de enemigos eliminados por el jugador
+    public static float TiempoJugado => main != null ? main.tiempoJugado : 0f;// tiempo total jugado por el jugador en segundos
+    public static int DineroGastado => main != null ? main.dineroGastado : 0;// cantidad total de dinero gastado por el jugador
+    public static int DefensasUsadas => main != null ? main.defensasUsadas : 0;// cantidad total de defensas colocadas por el jugador
+    public static int WavesCompletadas => main != null ? main.wavesCompletadas : 0;// cantidad total de oleadas completadas por el jugador
+    
+    public static bool IsPaused => main != null ? main.isPaused : false;// indica si el juego está actualmente en pausa
+    public static int CurrentWavePaused => main != null ? main.currentWavePaused : 0;// índice de la oleada en la que se guardó la pausa, si es que hay una pausa guardada
 
 
     private void Awake()
@@ -41,6 +45,7 @@ public class PlayerData : MonoBehaviour
         }
     }
 
+    // Reinicia las estadísticas del jugador al inicio de una nueva partida o al cargar un nivel, pero solo si no hay una pausa guardada
     public static void ResetMatch()
     {
         if (main == null)
@@ -53,7 +58,7 @@ public class PlayerData : MonoBehaviour
             Debug.Log("PlayerData: Match no se resetea porque hay pausa guardada.");
             return;
         }
-
+        // Reiniciar todas las estadísticas a sus valores iniciales
         main.monedaActual = InitialMoney;
         main.puntos = 0;
         main.enemigosMatados = 0;
@@ -64,8 +69,8 @@ public class PlayerData : MonoBehaviour
         main.isPaused = false;
         main.currentWavePaused = 0;
     }
-
-    public static void SetTiempoJugado(float nuevoTiempo)
+   
+    public static void SetTiempoJugado(float nuevoTiempo)// Método para actualizar el tiempo jugado
     {
         if (main != null)
         {
@@ -73,7 +78,7 @@ public class PlayerData : MonoBehaviour
         }
     }
 
-    public static void AddTiempo(float deltaTime)
+    public static void AddTiempo(float deltaTime)// Método para incrementar el tiempo jugado, utilizado en el Update del LevelManager
     {
         if (main != null && deltaTime > 0f)
         {
@@ -81,7 +86,7 @@ public class PlayerData : MonoBehaviour
         }
     }
 
-    public static void AddMoneda(int amount)
+    public static void AddMoneda(int amount)// Método para agregar monedas al jugador
     {
         if (main != null)
         { 
@@ -91,7 +96,7 @@ public class PlayerData : MonoBehaviour
         
     }
 
-    public static bool GastarMoneda(int amount)
+    public static bool GastarMoneda(int amount)// Método para gastar monedas al solicitar una compra
     {
         if (amount <= 0)
         {
@@ -108,7 +113,7 @@ public class PlayerData : MonoBehaviour
         return true;
     }
 
-    public static int DeductMoneda(int amount)
+    public static int DeductMoneda(int amount)// Método para deducir monedas del jugador
     {
         if (main == null || amount <= 0) return 0;
 
@@ -118,7 +123,7 @@ public class PlayerData : MonoBehaviour
         return toDeduct;
     }
 
-    public static void AddPuntos(int amount)
+    public static void AddPuntos(int amount)// Método para agregar puntos al jugador
     {
         if (main != null)
         {
@@ -126,7 +131,7 @@ public class PlayerData : MonoBehaviour
         }
     }
 
-    public static void RegistrarEnemigoMatado()
+    public static void RegistrarEnemigoMatado()// Método para registrar que el jugador ha matado a un enemigo
     {
         if (main != null)
         {
@@ -134,7 +139,7 @@ public class PlayerData : MonoBehaviour
         }
     }
 
-    public static void RegistrarDefensaUsada()
+    public static void RegistrarDefensaUsada()// Método para registrar que el jugador ha colocado una defensa
     {
         if (main != null)
         {
@@ -144,7 +149,7 @@ public class PlayerData : MonoBehaviour
 
     [SerializeField] private int wavesCompletadas;
 
-    public static void SetWavesCompletadas(int wave)
+    public static void SetWavesCompletadas(int wave)// Método para actualizar la cantidad de oleadas completadas por el jugador
     {
         if(main != null)
         {
@@ -159,7 +164,7 @@ public class PlayerData : MonoBehaviour
             main.isPaused = paused;
     }
 
-    public static void SetCurrentWave(int waveIndex)
+    public static void SetCurrentWave(int waveIndex)// Método para actualizar el índice de la oleada en la que se guardó la pausa
     {
         if (main != null)
             main.currentWavePaused = waveIndex;

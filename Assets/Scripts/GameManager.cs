@@ -4,7 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager main;
 
-    [Header("Estadísticas")]
+    [Header("Estadísticas")]// Variables para rastrear las estadísticas del juego
     public int amenazasDetectadas;
     public int nivelCompletado;
     public bool victoria;
@@ -21,12 +21,12 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    // Método para agregar una amenaza detectada
     public void AddAmenaza()
     {
         amenazasDetectadas++;
     }
-
+    // Método para completar un nivel
     public void ResetAmenazas()
     {
         amenazasDetectadas = 0;

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Jugador : MonoBehaviour
 {
+    // Atributos del jugador
     public float velocidad = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -27,11 +28,10 @@ public class Jugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        BarraE.value = Health;
+        BarraE.value = Health;// Actualizar la barra de salud
         if (life)
         {
-
-
+            // Obtener input del jugador
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
 
@@ -56,7 +56,7 @@ public class Jugador : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void FixedUpdate()// Se llama a intervalos fijos, ideal para física
     {
         if (life)
         {
@@ -64,8 +64,10 @@ public class Jugador : MonoBehaviour
         }
     }
 
-   void FinJuego()
+    // Método para terminar el juego después de la muerte del jugador, enviando estadísticas al backend y limpiando el estado guardado
+    void FinJuego()
     {
+        
         Debug.Log("FIN JUEGO");
 
         if (Timer.main != null)
@@ -80,13 +82,14 @@ public class Jugador : MonoBehaviour
             api = apiObj.AddComponent<APIManager>();
         }
 
+        // Enviar las estadísticas del juego al backend
         api.SendKPI(
             Mathf.RoundToInt(Timer.main.GetTiempo()),
             PlayerData.EnemigosMatados,  
             0,   
             0    
         );
-
+        // Limpiar el save para evitar que el jugador pueda continuar desde un estado anterior
         GuardarJuego guardarJuego = FindObjectOfType<GuardarJuego>();
         Time.timeScale = 1f;
         guardarJuego.ClearSavedData();

@@ -6,11 +6,11 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager main;
 
-    [Header("Datos jugador")]
+    [Header("Datos jugador")]// Propiedades para acceder a los datos del jugador
     public int moneda => PlayerData.MonedaActual;
     public int puntos => PlayerData.Puntos;
 
-    [Header("Enemy money drain")]
+    [Header("Enemy money drain")]// Configuración para el sistema de drenaje de monedas basado en la cantidad de enemigos vivos
     public bool enableEnemyDrain;
     public float drainInterval = 5f;
     public int drainAmount = 1;
@@ -32,10 +32,10 @@ public class LevelManager : MonoBehaviour
             return;
         }
     }
-
+   
     private void Start()
     {
-        PlayerData.ResetMatch();
+        PlayerData.ResetMatch();// Reiniciar datos del jugador al iniciar el nivel
         enableEnemyDrain = false;
 
         // sincronizar con el spawner si ya existe
@@ -45,6 +45,7 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    // Método para manejar el evento de inicio de una nueva oleada, actualizando el número inicial de enemigos
     private void HandleWaveStarted(int waveIndex, int initialEnemyCount)
     {
         currentWaveInitialEnemies = initialEnemyCount;
@@ -53,6 +54,7 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
+        // Verificar si el número de enemigos vivos supera el umbral para activar el drenaje de monedas
         if (ContadorEnem.Alive >= 15)
         {
             if (!enableEnemyDrain)
@@ -71,7 +73,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-
+    // Métodos para agregar y gastar monedas, así como para agregar puntos
     public void AddMoneda(int amount)
     {
         PlayerData.AddMoneda(amount);
@@ -97,6 +99,7 @@ public class LevelManager : MonoBehaviour
         PlayerData.AddPuntos(amount);
     }
 
+    // Métodos para iniciar y detener la rutina de drenaje de monedas basada en enemigos vivos
     public void StartEnemyDrain()
     {
         if (enemyDrainCoroutine == null)
@@ -111,6 +114,7 @@ public class LevelManager : MonoBehaviour
             enemyDrainCoroutine = null;
         }
     }
+    // Rutina que se ejecuta periódicamente para deducir monedas del jugador mientras haya muchos enemigos vivos    
     private IEnumerator EnemyDrainRoutine()
     {
         while (true)

@@ -142,20 +142,24 @@ public class GuardarJuego : MonoBehaviour
             }
             if (data != null && data.defenses != null)
             {
+                // Para cada defensa guardada, buscar el prefab correspondiente en BuildManager y luego instanciarlo
                 var buildManager = FindObjectOfType<BuildManager>();
                 for (int i = 0; i < data.defenses.Length; i++)
                 {
                     var ds = data.defenses[i];
                     if (ds == null || string.IsNullOrEmpty(ds.prefabName)) continue;
 
+                    // Buscar el prefab correspondiente en BuildManager por nombre
                     GameObject prefabToSpawn = null;
                     if (buildManager != null)
                     {
+                        // Buscar en el arreglo de torres del BuildManager
                         var torres = buildManager.GetTorres();
                         if (torres != null)
                         {
                             for (int t = 0; t < torres.Length; t++)
                             {
+                                // Comprobar que la torre y su prefab existen antes de comparar nombres
                                 if (torres[t] != null && torres[t].prefab != null &&
                                     torres[t].prefab.name == ds.prefabName)
                                 {
@@ -165,7 +169,7 @@ public class GuardarJuego : MonoBehaviour
                             }
                         }
                     }
-
+                    // Si se encontró el prefab, instanciarlo en la posición y rotación guardadas
                     if (prefabToSpawn != null)
                     {
                         var inst = Instantiate(prefabToSpawn, ds.position, ds.rotation);
@@ -184,6 +188,7 @@ public class GuardarJuego : MonoBehaviour
     }
 
     // Utilidades de serialización
+    // Clase para representar el estado guardado del juego (wave, monedas, defensas, tiempo jugado)
     [System.Serializable]
     private class SaveData
     {
@@ -192,7 +197,7 @@ public class GuardarJuego : MonoBehaviour
         public DefenseSave[] defenses;
         public float tiempoJugado;
     }
-
+    // Clase para representar la información de una defensa guardada (nombre del prefab, posición y rotación)
     [System.Serializable]
     private class DefenseSave
     {
